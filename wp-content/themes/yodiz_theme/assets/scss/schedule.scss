@@ -1,0 +1,422 @@
+@import "global";
+@import "sidebar";
+
+p {
+  font-size: 19px;
+  line-height: 130%;
+}
+
+a {
+  cursor: pointer;
+  font-size: 19px;
+  line-height: 130%;
+  letter-spacing: -.02em;
+  font-weight: 400;
+  transition: color .3s;
+  text-decoration: none;
+
+  &:not(.btn) {
+    &:hover {
+      transition: color .3s;
+    }
+  }
+}
+
+.content {
+  padding: 59px 0 90px;
+  background: #F8F8FD;
+  margin: 90px 0 0;
+}
+
+.schedule__body {
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 42px 0 35px;
+
+  &:not(:last-child) {
+    margin-bottom: 60px;
+  }
+
+  h2 {
+    margin-bottom: 18px;
+  }
+
+  .course-info {
+    display: flex;
+    grid-column-gap: 50px;
+    margin-bottom: 42px;
+    color: $yz_grey;
+
+    .access {
+      display: flex;
+      align-items: center;
+
+      svg {
+        margin-right: 11px;
+      }
+
+      &__free {
+        width: 8px;
+        height: 8px;
+        min-width: 8px;
+      }
+
+      &__paid {
+        width: 12px;
+        height: 15px;
+        min-width: 12px;
+      }
+    }
+
+    .students {
+      svg {
+        margin-right: 9px;
+      }
+    }
+  }
+}
+
+.schedule__header {
+  padding: 0 50px;
+
+  .course-category {
+    display: flex;
+    margin-bottom: 12px;
+    grid-column-gap: 47px;
+  }
+}
+
+.btns-box {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 20px;
+}
+
+.schedule-btn {
+  margin-top: 24px;
+}
+
+.course__progress {
+  padding: 0 26px;
+
+  .lessons-list {
+    margin-top: 33px;
+  }
+
+  ul {
+    .list-item {
+      position: relative;
+      font-weight: 400;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: background .3s;
+      display: flex;
+      align-items: center;
+
+      &:not(.selected) {
+        &:hover {
+          background: #F8F8FD;
+          transition: background .3s;
+        }
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 24px;
+      }
+
+      .title-text {
+        padding-left: 60px;
+        display: flex;
+        align-items: center;
+        color: #9090A9;
+
+        &:hover {
+          color: #9090A9;
+        }
+
+        svg {
+          margin-right: 11px;
+        }
+      }
+
+      span {
+        color: #9090A9;
+      }
+
+      .date {
+        color: #9090A9;
+        margin-left: auto;
+      }
+    }
+
+    .course__block {
+      margin-top: 33px;
+      margin-bottom: 7px;
+      margin-left: 25px;
+      font-family: "Proxima Nova Sb", sans-serif;
+    }
+
+    .available {
+      span {
+        color: black;
+      }
+
+      .title-text {
+        color: black;
+
+        svg {
+          min-width: 8px;
+
+          circle {
+            fill: #8DE300;
+          }
+        }
+
+      }
+
+      .date {
+        color: black;
+      }
+
+      &:hover {
+        .title-text {
+          color: #0500FF;
+        }
+      }
+    }
+
+    .number {
+      position: absolute;
+      left: 25px;
+    }
+  }
+}
+
+.content__wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+
+  .content-item {
+    background: #FFF;
+    border-radius: 10px;
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.closed {
+  .main {
+    .content, .footer {
+      width: 100%;
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    &__burger-box {
+      display: none;
+    }
+  }
+
+  .aside {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  p {
+    font-size: 16px;
+  }
+  .header {
+    &__links {
+      display: none;
+    }
+  }
+  .content {
+    &__wrapper {
+      h1, .breadcrumbs {
+        padding: 0 8px;
+      }
+      .breadcrumbs {
+        a {
+          font-size: 16px;
+        }
+      }
+      .schedule {
+        &__header {
+          padding: 0 18px;
+
+          .course-category {
+            margin-bottom: 11px;
+          }
+
+          .title {
+            margin-bottom: 14px;
+            max-width: 210px;
+          }
+
+          .course-category, .course-info {
+            grid-column-gap: 20px;
+            justify-content: space-between;
+          }
+
+          .course-info {
+            margin-bottom: 24px;
+            .access {
+              svg {
+                margin-right: 7px;
+              }
+              &__free {
+                width: 6px;
+                height: 6px;
+                min-width: 6px;
+              }
+              &__paid {
+                height: 12px;
+                width: 9px;
+              }
+            }
+          }
+
+          .students {
+            svg {
+              width: 23px;
+              height: 12px;
+            }
+            span {
+              display: none;
+            }
+          }
+        }
+        &__body {
+          padding: 23px 0 10px;
+          &:not(:last-child) {
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
+  .course__progress {
+    padding: 0;
+
+    .free-lessons {
+      margin-top: 15px;
+    }
+
+    ul {
+      .list-item {
+        border-top: 1px solid #E0E0EF;
+        border-radius: unset;
+
+        a {
+          padding: 20px 15px 20px 0;
+          flex-wrap: wrap;
+        }
+
+        .number {
+          left: 20px;
+        }
+
+        .title-text {
+          font-family: 'Proxima Nova Sb', sans-serif;
+          padding-left: 45px;
+          align-items: baseline;
+
+          svg {
+            min-width: 8px;
+            min-height: 8px;
+          }
+        }
+
+        .date {
+          width: 100%;
+          padding-left: 65px;
+          margin-left: 0;
+          margin-top: 5px;
+          display: flex;
+
+          &-item {
+            border: 1px solid #D2D2E7;
+            border-radius: 7px;
+            padding: 0 10px;
+          }
+        }
+      }
+
+      .available {
+        .date {
+          &-item {
+            border: 1px solid #000000;
+            background: black;
+            color: white;
+          }
+        }
+      }
+
+      .course__block {
+        font-family: "Proxima Nova Rg", sans-serif;
+        margin-top: 20px;
+      }
+    }
+    .free-lessons {
+      .list-item {
+        .title-text {
+          svg {
+            width: 6px;
+            height: 6px;
+            min-width: 6px;
+            min-height: 6px;
+          }
+        }
+      }
+    }
+    .paid-lessons {
+      .list-item {
+        .title-text {
+          svg {
+            height: 12px;
+            width: 9px;
+          }
+        }
+      }
+    }
+    .course-closed {
+
+      .list-item {
+        border-top: none;
+
+        a {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+
+        &:first-child {
+          padding-top: 10px;
+          border-top: 1px solid #E0E0EF;
+        }
+
+        & ~ .list-block {
+          margin-top: 10px;
+        }
+      }
+      .list-block {
+        &:not(:first-child) {
+          border-top: 1px solid #E0E0EF;
+        }
+      }
+    }
+    .btns-box {
+      grid-row-gap: 15px;
+    }
+  }
+}

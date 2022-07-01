@@ -1,0 +1,260 @@
+@import "vars";
+
+.content__wrapper {
+  .progress {
+    padding: 20px 38px 40px;
+    position: relative;
+
+    h3 {
+      padding-right: 10px;
+      color: $yz_grey;
+    }
+
+    p {
+      font-size: 19px;
+    }
+
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 21px;
+
+      .btn-arrow {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        background: $yz_white_lite;
+        border-radius: 10px;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background .3s;
+
+        svg {
+          transition: transform 0.3s;
+
+          line {
+            transition: stroke .3s;
+          }
+        }
+
+        &:hover {
+          background: $yz_blue_lite;
+
+          svg {
+            line {
+              stroke: white;
+            }
+          }
+        }
+      }
+    }
+
+    &__body {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 0.3s;
+      position: static;
+    }
+
+    &__box {
+      .text {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+
+        p {
+          line-height: 140%;
+        }
+      }
+    }
+
+    &__bar {
+      position: relative;
+      height: 38px;
+      box-sizing: border-box;
+      background: white;
+      border-radius: 10px;
+      border: 1px solid #E0E0EF;
+      overflow: hidden;
+
+      .bar__green {
+        height: 100%;
+        width: 10%;
+        max-width: 100%;
+        background: #8DE300;
+      }
+      .lock-text {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        border-left: 1px solid #E0E0EF;
+        background: $yz_white_lite;
+        height: 100%;
+        top: 0;
+        left: 15%;
+        width: 100%;
+        padding-left: 21px;
+
+        svg {
+          margin-right: 6px;
+        }
+
+        p {
+          margin-bottom: -4px;
+        }
+      }
+    }
+
+    &__categories {
+      display: flex;
+      justify-content: space-between;
+      grid-column-gap: 57px;
+      overflow: hidden;
+      max-height: 320px;
+      transition: max-height 0.4s;
+
+      .tools {
+        flex: 1;
+        margin-top: 37px;
+
+        h3 {
+          margin-bottom: 23px;
+        }
+
+        &__item {
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+        }
+
+        &__title {
+          margin-bottom: 3px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        &__bar {
+
+          .bar__grey {
+            height: 3px;
+            background: #ededf7;
+          }
+
+          .bar__green {
+            margin-top: -3px;
+            height: 3px;
+            background: #8de300;
+          }
+        }
+      }
+    }
+  }
+
+  .open-body {
+    .progress__categories {
+      max-height: 0;
+    }
+
+    .progress__title {
+      .btn-arrow {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .content__wrapper {
+    .content-item {
+      padding: 0 0 20px;
+
+      &:not(.progress) {
+        padding-top: 20px;
+      }
+
+      &:not(.video-block) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    .progress {
+      padding-top: 17px;
+
+      &__title {
+        margin-bottom: 13px;
+      }
+
+      &__body {
+        small {
+          font-size: 16px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      &__bar {
+        height: 20px;
+        margin-top: 10px;
+
+        .lock-text {
+          padding-left: 7px;
+          svg {
+            width: 9px;
+            height: 12px;
+
+            path {
+              fill: $yz_dgrey_lite;
+            }
+          }
+          p {
+            display: none;
+          }
+        }
+      }
+
+      &__categories {
+        flex-direction: column;
+        max-height: 450px;
+
+        .tools {
+          margin-top: 30px;
+
+          h3 {
+            margin-bottom: 12px;
+          }
+        }
+
+        .tools__item {
+          &:not(:last-child) {
+            margin-bottom: 12px;
+          }
+        }
+      }
+
+      &__title {
+        .btn-arrow {
+          height: 30px;
+          width: 30px;
+          min-width: 30px;
+          min-height: 30px;
+
+          svg {
+            width: 16px;
+          }
+        }
+      }
+    }
+  }
+}

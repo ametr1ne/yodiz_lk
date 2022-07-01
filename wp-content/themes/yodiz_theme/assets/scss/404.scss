@@ -1,0 +1,75 @@
+@import "global";
+@import "sidebar";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+  height: 100%;
+
+  h1 {
+    margin-bottom: 26px;
+    text-align: center;
+  }
+
+  p {
+    max-width: 600px;
+    font-size: 30px;
+    line-height: 130%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    margin: 0 auto;
+    max-width: 396px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__burger-box, .aside {
+    display: none;
+  }
+}
+
+.closed {
+  .main {
+    .content, .footer {
+      width: 100%;
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    &__links {
+      display: none;
+    }
+  }
+  .main {
+    padding: 0 30px;
+    h1 {
+      margin-bottom: 12px;
+    }
+    p {
+      margin-bottom: 23px;
+      font-size: 19px;
+    }
+    .btn {
+      padding: 0 37px;
+    }
+  }
+}

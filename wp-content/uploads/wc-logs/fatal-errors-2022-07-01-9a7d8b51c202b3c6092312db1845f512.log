@@ -1,0 +1,46 @@
+2022-07-01T11:32:34+03:00 CRITICAL Uncaught Error: Class "Automattic\WooCommerce\Client" not found in C:\Work\local_projects\lk_wp\wp-content\themes\yodiz_theme\functions.php:17
+Stack trace:
+#0 C:\Work\local_projects\lk_wp\wp-settings.php(566): include()
+#1 C:\Work\local_projects\lk_wp\wp-config.php(95): require_once('C:\\Work\\local_p...')
+#2 C:\Work\local_projects\lk_wp\wp-load.php(50): require_once('C:\\Work\\local_p...')
+#3 C:\Work\local_projects\lk_wp\wp-admin\admin-ajax.php(22): require_once('C:\\Work\\local_p...')
+#4 {main}
+  thrown in C:\Work\local_projects\lk_wp\wp-content\themes\yodiz_theme\functions.php on line 17
+
+2022-07-01T11:34:35+03:00 CRITICAL Uncaught Error: Class "Automattic\WooCommerce\Client" not found in C:\Work\local_projects\lk_wp\wp-content\themes\yodiz_theme\functions.php:17
+Stack trace:
+#0 C:\Work\local_projects\lk_wp\wp-settings.php(566): include()
+#1 C:\Work\local_projects\lk_wp\wp-config.php(95): require_once('C:\\Work\\local_p...')
+#2 C:\Work\local_projects\lk_wp\wp-load.php(50): require_once('C:\\Work\\local_p...')
+#3 C:\Work\local_projects\lk_wp\wp-admin\admin-ajax.php(22): require_once('C:\\Work\\local_p...')
+#4 {main}
+  thrown in C:\Work\local_projects\lk_wp\wp-content\themes\yodiz_theme\functions.php on line 17
+
+2022-07-01T11:36:36+03:00 CRITICAL Uncaught Error: Class "Automattic\WooCommerce\Client" not found in C:\Work\local_projects\lk_wp\wp-content\themes\yodiz_theme\functions.php:17
+Stack trace:
+#0 C:\Work\local_projects\lk_wp\wp-settings.php(566): include()
+#1 C:\Work\local_projects\lk_wp\wp-config.php(95): require_once('C:\\Work\\local_p...')
+#2 C:\Work\local_projects\lk_wp\wp-load.php(50): require_once('C:\\Work\\local_p...')
+#3 C:\Work\local_projects\lk_wp\wp-admin\admin-ajax.php(22): require_once('C:\\Work\\local_p...')
+#4 {main}
+  thrown in C:\Work\local_projects\lk_wp\wp-content\themes\yodiz_theme\functions.php on line 17
+
+2022-07-01T11:38:37+03:00 CRITICAL Uncaught Error: Class "Automattic\WooCommerce\Client" not found in C:\Work\local_projects\lk_wp\wp-content\themes\yodiz_theme\functions.php:17
+Stack trace:
+#0 C:\Work\local_projects\lk_wp\wp-settings.php(566): include()
+#1 C:\Work\local_projects\lk_wp\wp-config.php(95): require_once('C:\\Work\\local_p...')
+#2 C:\Work\local_projects\lk_wp\wp-load.php(50): require_once('C:\\Work\\local_p...')
+#3 C:\Work\local_projects\lk_wp\wp-admin\admin-ajax.php(22): require_once('C:\\Work\\local_p...')
+#4 {main}
+  thrown in C:\Work\local_projects\lk_wp\wp-content\themes\yodiz_theme\functions.php on line 17
+
+2022-07-01T11:39:58+03:00 CRITICAL Uncaught Error: Class "Automattic\WooCommerce\Client" not found in C:\Work\local_projects\lk_wp\wp-content\themes\yodiz_theme\functions.php:17
+Stack trace:
+#0 C:\Work\local_projects\lk_wp\wp-settings.php(566): include()
+#1 C:\Work\local_projects\lk_wp\wp-config.php(95): require_once('C:\\Work\\local_p...')
+#2 C:\Work\local_projects\lk_wp\wp-load.php(50): require_once('C:\\Work\\local_p...')
+#3 C:\Work\local_projects\lk_wp\wp-blog-header.php(13): require_once('C:\\Work\\local_p...')
+#4 C:\Work\local_projects\lk_wp\index.php(17): require('C:\\Work\\local_p...')
+#5 {main}
+  thrown in C:\Work\local_projects\lk_wp\wp-content\themes\yodiz_theme\functions.php on line 17
+

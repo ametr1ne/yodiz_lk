@@ -1,0 +1,1325 @@
+@font-face {
+  font-family: "Proxima Nova Sb";
+  src: url(../fonts/ProximaNova-Semibold.woff2) format("woff2"), url(../fonts/ProximaNova-Semibold.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Proxima Nova Rg";
+  src: url(../fonts/ProximaNova-Regular.woff2) format("woff2"), url(../fonts/ProximaNova-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Proxima Nova Rg", sans-serif;
+  position: relative;
+  display: block;
+}
+
+h1 {
+  font-family: "Proxima Nova Sb", sans-serif;
+  font-size: 80px;
+  line-height: 110%;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-family: "Proxima Nova Sb", sans-serif;
+  font-size: 55px;
+  line-height: 110%;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-family: "Proxima Nova Sb", sans-serif;
+  font-size: 30px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-size: 30px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:not(.btn) {
+  transition: color 0.3s;
+}
+a:not(.btn):hover {
+  color: #0500FF;
+}
+
+ul {
+  list-style: none;
+}
+ul li {
+  font-size: 19px;
+  line-height: 130%;
+}
+ul li a, ul li p {
+  font-size: 19px;
+  line-height: 130%;
+}
+
+.breadcrumbs {
+  margin-top: 22px;
+  margin-bottom: 53px;
+  font-size: 19px;
+  line-height: 130%;
+}
+.breadcrumbs span {
+  color: #9090A9;
+}
+
+.text-grey {
+  color: #9090A9;
+}
+
+.header {
+  background: #202027;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  z-index: 10;
+  padding: 0;
+  display: flex;
+}
+.header__left {
+  display: flex;
+  align-items: center;
+  grid-column-gap: 48px;
+}
+.header__btns {
+  display: flex;
+  grid-column-gap: 30px;
+}
+.header__burger-box {
+  background: white;
+  height: 100%;
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__burger {
+  transition: opacity 0.4s;
+  cursor: pointer;
+  background: transparent;
+  width: 27px;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  border: none;
+}
+.header__line {
+  display: block;
+  position: absolute;
+  width: 2px;
+  height: 36px;
+  border-radius: 2px;
+  transition: 0.25s linear;
+  background: #9090A9;
+}
+.header__line--1 {
+  transform: rotate(45deg);
+  top: -4px;
+  left: 12px;
+}
+.header__line--2 {
+  transform: rotate(45deg);
+  top: 35px;
+  left: -15px;
+  transition-delay: 0s;
+}
+.header__line--3 {
+  transform: rotate(-45deg);
+  top: -4px;
+  left: 12px;
+  transition-delay: 0.3s;
+}
+.header__burger .header__line--2-fly {
+  transform: rotate(45deg);
+  top: 8px;
+  left: 12px;
+  transition-delay: 0.3s;
+}
+.header__burger .header__line--3-fly {
+  transform: rotate(-45deg);
+  top: 24px;
+  left: 40px;
+  transition-delay: 0s;
+}
+.header__wrapper {
+  width: 100%;
+  padding: 0 30px;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.header a:not(.btn) {
+  color: white;
+}
+.header a:not(.btn):hover {
+  color: #FFF444;
+}
+
+.main .content {
+  padding: 59px 0 90px;
+  background: #FAFAFE;
+  margin: 90px 0 0;
+}
+.main .content__wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.main .content__wrapper .content-item {
+  border-radius: 10px;
+}
+.main .content__wrapper .content-item:not(:last-child) {
+  margin-bottom: 60px;
+}
+.main .content-item {
+  background: white;
+}
+
+.footer {
+  width: 100%;
+  grid-area: footer;
+  background: white;
+  padding: 50px 70px 53px;
+  transition: transform 0.5s, width 0.5s;
+}
+.footer__links {
+  display: flex;
+  grid-column-gap: 30px;
+}
+.footer p, .footer a {
+  font-size: 19px;
+  line-height: 130%;
+}
+.footer p {
+  padding-right: 15px;
+}
+.footer a {
+  transition: color 0.3s;
+}
+.footer a:hover {
+  color: #0500FF;
+}
+.footer .juri-name {
+  display: flex;
+  align-items: center;
+}
+.footer .juri-name svg {
+  margin-right: 19px;
+  margin-top: -4px;
+}
+.footer .top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer__links {
+  display: flex;
+  grid-column-gap: 20px;
+}
+.footer .bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.footer .bottom .footer-left {
+  padding-right: 15px;
+}
+
+/*---------- buttons start -----------------*/
+.btn {
+  font-family: "Proxima Nova Sb", sans-serif;
+  display: flex;
+  cursor: pointer;
+  border-radius: 100px;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  line-height: 140%;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 70px;
+  transition: border 0.3s, background 0.3s, color 0.3s, fill 0.3s;
+}
+.btn svg {
+  margin-right: 7px;
+  margin-top: -4px;
+}
+
+.blue-btn {
+  background: #0500FF;
+  color: white;
+  border: none;
+  width: 100%;
+  transition: background 0.3s;
+}
+.blue-btn:hover {
+  background: #0400D0;
+}
+
+.header-btn {
+  height: 50px;
+}
+
+.greyborder-btn {
+  color: black;
+  padding-right: 36px;
+  padding-left: 36px;
+  border: 1px solid #D2D2E7;
+}
+.greyborder-btn:hover {
+  border: 1px solid #0500FF;
+  color: #0500FF;
+}
+
+.d_greyborder-btn {
+  color: #696978;
+  padding-right: 36px;
+  padding-left: 36px;
+  border: 1px solid #3D3D4D;
+}
+.d_greyborder-btn:hover {
+  border: 1px solid #FFF444;
+  color: #FFF444;
+}
+
+.blackborder-btn {
+  color: black;
+  padding-right: 36px;
+  padding-left: 36px;
+  border: 1px solid black;
+}
+.blackborder-btn:hover {
+  background: black;
+  color: white;
+}
+
+.grey-btn {
+  color: #9090A9;
+  border: 1px solid #D2D2E7;
+  padding-left: 45px;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.grey-btn .teachers {
+  display: flex;
+  align-items: center;
+}
+.grey-btn .teachers img {
+  height: 50px;
+  width: 50px;
+  filter: grayscale(40%);
+  transition: filter 0.3s;
+}
+.grey-btn .teachers img:not(:last-child) {
+  margin-right: -10px;
+}
+.grey-btn .teachers .dima {
+  z-index: 3;
+}
+.grey-btn .teachers .lika {
+  z-index: 2;
+}
+.grey-btn:hover {
+  border: 1px solid #0500FF;
+  color: #0500FF;
+}
+.grey-btn:hover img {
+  filter: grayscale(0%);
+}
+
+.d_grey-btn {
+  color: #696978;
+  border: 1px solid #3D3D4D;
+  padding-left: 45px;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.d_grey-btn .teachers {
+  display: flex;
+  align-items: center;
+}
+.d_grey-btn .teachers img {
+  height: 50px;
+  width: 50px;
+  filter: grayscale(40%);
+  transition: filter 0.3s;
+}
+.d_grey-btn .teachers img:not(:last-child) {
+  margin-right: -10px;
+}
+.d_grey-btn .teachers .dima {
+  z-index: 3;
+}
+.d_grey-btn .teachers .lika {
+  z-index: 2;
+}
+.d_grey-btn:hover {
+  border: 1px solid #FFF444;
+  color: #FFF444;
+}
+.d_grey-btn:hover img {
+  filter: grayscale(0%);
+}
+
+.user-btn {
+  font-family: "Proxima Nova Rg", sans-serif;
+  color: #202027;
+}
+.user-btn svg {
+  height: 15px;
+  width: 13px;
+  margin-right: 13px;
+}
+
+.white-btn {
+  color: black;
+  background: white;
+  padding: 0 36px;
+}
+.white-btn:hover {
+  background: #FFF444;
+}
+
+.btn2_dark {
+  border: 1px solid #3D3D4D;
+  color: white;
+  padding: 0 37px;
+}
+.btn2_dark:hover {
+  border: 1px solid #FFF444;
+  color: #FFF444;
+}
+
+.yellow-btn {
+  color: black;
+  background: #FFF444;
+  padding: 0 10px;
+}
+.yellow-btn:hover {
+  background: #FFE600;
+}
+
+/*------------- buttons end ----------------*/
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 40px;
+    line-height: 110%;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    font-size: 19px;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+  }
+
+  ul li a, ul li p {
+    font-size: 16px;
+  }
+
+  .breadcrumbs {
+    font-size: 16px;
+    margin-top: 12px;
+    margin-bottom: 24px;
+  }
+
+  .header {
+    height: 50px;
+  }
+  .header__logo svg {
+    height: 30px;
+    width: 40px;
+  }
+  .header__wrapper {
+    padding: 0 10px;
+  }
+  .header__burger-box {
+    width: 50px;
+    min-width: 50px;
+  }
+  .header__burger {
+    height: 30px;
+    width: 25px;
+  }
+  .header__line {
+    height: 22px;
+  }
+  .header__link, .header .logout-btn {
+    display: none;
+  }
+
+  .main .content {
+    padding: 25px 10px 50px;
+    margin: 50px 0 0;
+  }
+
+  .footer {
+    padding: 23px 18px 24px;
+  }
+  .footer a, .footer p {
+    font-size: 16px;
+  }
+  .footer .juri-name svg {
+    margin-right: 9px;
+    width: 16px;
+    height: 12px;
+    margin-top: -1px;
+  }
+  .footer__links {
+    flex-wrap: wrap;
+    grid-column-gap: 12px;
+    grid-row-gap: 8px;
+  }
+  .footer .bottom {
+    margin-top: 17px;
+  }
+  .footer .top, .footer .bottom {
+    grid-row-gap: 16px;
+  }
+
+  .btn {
+    height: 50px;
+    font-size: 16px;
+  }
+  .btn svg {
+    display: none;
+  }
+
+  .header-btn {
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .user-btn {
+    padding: 0 10px 0 12px;
+  }
+  .user-btn svg {
+    width: 10px;
+    height: 12px;
+    margin-top: 0;
+    display: block;
+    margin-right: 6px;
+  }
+
+  .greyborder-btn {
+    padding: 0 10px;
+  }
+}
+.aside {
+  left: 0;
+  top: 0;
+  position: fixed;
+  background: #fff;
+  height: 100%;
+  width: 500px;
+  transition: left 0.5s;
+  padding-top: 90px;
+  border-right: 1px solid #D2D2E7;
+}
+.aside p {
+  font-size: 19px;
+}
+.aside__top {
+  display: none;
+}
+.aside__btns {
+  display: none;
+}
+.aside__wrap {
+  position: sticky;
+  top: 0;
+  padding: 35px 0 35px 0;
+  height: 100%;
+}
+.aside__wrap .simplebar-track.simplebar-vertical {
+  width: 16px;
+}
+.aside__wrap .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: 9px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #D2D2E7;
+  border-radius: 100px;
+  opacity: 0.5;
+  width: 7px;
+}
+.aside__wrap .simplebar-visible:before {
+  opacity: 1;
+}
+.aside .course {
+  position: relative;
+  margin-bottom: 42px;
+}
+.aside .course:not(:first-child):before {
+  content: "";
+  position: relative;
+  display: block;
+  margin-bottom: 45px;
+  background-color: #C2C2E7;
+  height: 1px;
+  margin-left: -15px;
+}
+.aside .course__header {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.aside .course__header .text {
+  padding: 0 16px;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.aside .course__header .text h3 {
+  margin-bottom: 11px;
+  width: 100%;
+}
+.aside .course__header .text .info {
+  display: flex;
+  grid-column-gap: 39px;
+  flex-wrap: wrap;
+}
+.aside .course__header .text .info .students svg {
+  margin-right: 9px;
+}
+.aside .course__header .sidebar-btn {
+  margin-top: 24px;
+}
+.aside .course__progress {
+  margin-top: 32px;
+  padding-right: 24px;
+}
+.aside .course__progress ul li {
+  padding-left: 40px;
+  position: relative;
+  font-weight: 400;
+  border-radius: 0 100px 100px 0;
+  transition: background 0.3s;
+}
+.aside .course__progress ul li a {
+  color: black;
+  display: flex;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 14px;
+}
+.aside .course__progress ul li a .number {
+  position: absolute;
+  left: 40px;
+}
+.aside .course__progress ul li a:hover {
+  color: black;
+}
+.aside .course__progress ul li .title-text {
+  display: flex;
+  padding-left: 28px;
+  align-items: center;
+  color: #000;
+}
+.aside .course__progress ul li .title-text svg {
+  width: 8px;
+  height: 8px;
+  margin-right: 11px;
+  min-width: 8px;
+}
+.aside .course__progress ul li .title-text:hover {
+  color: #000;
+}
+.aside .course__progress ul li:not(.selected, .list-block):hover {
+  background: #F8F8FD;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.aside .course__progress ul .list-block {
+  margin-left: 0;
+}
+.aside .course__progress ul .course__block {
+  font-family: "Proxima Nova Sb", sans-serif;
+  margin-top: 33px;
+  margin-bottom: 7px;
+}
+.aside .course__progress ul .completed .title-text svg {
+  min-width: 8px;
+}
+.aside .course__progress ul .completed .title-text svg circle {
+  fill: #8DE300;
+}
+.aside .course__progress ul .selected {
+  background-color: #202027;
+  color: #fff;
+}
+.aside .course__progress ul .selected .title-text {
+  color: #fff;
+}
+.aside .course__progress ul .selected .title-text:hover {
+  color: #fff;
+}
+.aside .course__progress ul .selected .number {
+  color: #fff;
+}
+
+.closed .header__burger .header__line--2 {
+  transform: rotate(45deg);
+  top: 8px;
+  left: 12px;
+  transition-delay: 0.3s;
+}
+.closed .header__burger .header__line--3 {
+  transform: rotate(-45deg);
+  top: 24px;
+  left: 40px;
+  transition-delay: 0s;
+}
+.closed .aside {
+  left: -500px;
+}
+.closed .main .content, .closed .main .footer {
+  width: calc(100% + 500px);
+  transform: translateX(-500px);
+}
+
+@media (max-width: 1240px) {
+  .aside {
+    left: 0;
+    z-index: 5;
+  }
+
+  body:not(.closed) {
+    overflow: hidden;
+  }
+  body:not(.closed) .dark {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .closed .main .content, .closed .main .footer {
+    width: 100%;
+    transform: translateX(0);
+  }
+}
+@media (max-width: 1024px) {
+  body:not(.closed) .dark {
+    display: none;
+  }
+
+  .header__line--1, .header__line--3 {
+    top: 4px;
+  }
+
+  .closed .aside {
+    left: -100%;
+  }
+  .closed .header__burger .header__line--1 {
+    left: 8px;
+    top: 4px;
+  }
+  .closed .header__burger .header__line--2 {
+    left: 16px;
+    top: 4px;
+  }
+  .closed .header__burger .header__line--3 {
+    top: 27px;
+  }
+
+  .aside {
+    width: 98%;
+    min-width: 98%;
+    padding-top: 50px;
+  }
+  .aside p {
+    font-size: 16px;
+  }
+  .aside .simplebar-vertical {
+    visibility: hidden !important;
+  }
+  .aside__top {
+    display: block;
+    margin-bottom: 38px;
+  }
+  .aside__top a {
+    display: block;
+    padding: 17px 18px 21px;
+    border-top: 1px solid #E0E0EF;
+    color: inherit;
+  }
+  .aside__top a:last-child {
+    border-bottom: 1px solid #E0E0EF;
+  }
+  .aside__top a:visited {
+    color: inherit;
+  }
+  .aside__courses {
+    margin-bottom: 50px;
+  }
+  .aside__wrap {
+    padding: 30px 0;
+  }
+  .aside__btns {
+    display: block;
+    padding: 0 10px;
+  }
+  .aside__btns .btn ~ .btn {
+    margin-top: 14px;
+  }
+  .aside .course {
+    margin-bottom: 37px;
+  }
+  .aside .course:not(:first-child):before {
+    display: none;
+  }
+  .aside .course__header {
+    padding: 0 10px;
+  }
+  .aside .course__header .text {
+    padding: 0 8px;
+  }
+  .aside .course__header .text h3 {
+    margin-bottom: 14px;
+    font-size: 30px;
+    line-height: 120%;
+  }
+  .aside .course__header .text .info {
+    width: 100%;
+    justify-content: space-between;
+    grid-column-gap: unset;
+  }
+  .aside .course__header .text .info .students svg {
+    margin-right: 7px;
+    height: 12px;
+    width: 23px;
+  }
+  .aside .course__header .text .info .students span {
+    display: none;
+  }
+  .aside .course__header div .price {
+    margin-right: 18px;
+    font-size: 14px;
+  }
+  .aside .course__block {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .aside .course__progress {
+    margin-top: 18px;
+    padding-right: 0;
+  }
+  .aside .course__progress ul li {
+    border-radius: 0;
+    padding-left: 20px;
+  }
+  .aside .course__progress ul li .title-text {
+    align-items: baseline;
+    padding-left: 36px;
+    color: #9090A9;
+  }
+  .aside .course__progress ul li:not(.list-block) {
+    border-bottom: 1px solid #E0E0EF;
+  }
+  .aside .course__progress ul li a {
+    color: #9090A9;
+    font-family: "Proxima Nova Sb", sans-serif;
+    align-items: flex-start;
+    padding: 20px 20px 20px 0;
+  }
+  .aside .course__progress ul li a .number {
+    font-family: "Proxima Nova Rg", sans-serif;
+    left: 20px;
+  }
+  .aside .course__progress ul .completed:not(.selected) .title-text {
+    color: black;
+  }
+  .aside .course__progress ul .completed:not(.selected) .number {
+    color: black;
+  }
+  .aside .course__progress ul .course__block {
+    font-family: "Proxima Nova Rg", sans-serif;
+    font-size: 16px;
+    margin: 20px 0 0;
+  }
+  .aside .course__progress .paid-lessons {
+    border-bottom: 1px solid #E0E0EF;
+  }
+  .aside .course__progress .paid-lessons li:not(.list-block) {
+    border: none;
+  }
+  .aside .course__progress .paid-lessons .list-block {
+    border-top: 1px solid #E0E0EF;
+  }
+  .aside .course:not(:first-child):before {
+    margin-bottom: 28px;
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+}
+.content__wrapper .progress {
+  padding: 20px 38px 40px;
+  position: relative;
+}
+.content__wrapper .progress h3 {
+  padding-right: 10px;
+  color: #9090A9;
+}
+.content__wrapper .progress p {
+  font-size: 19px;
+}
+.content__wrapper .progress__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 21px;
+}
+.content__wrapper .progress__title .btn-arrow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  background: #FAFAFE;
+  border-radius: 10px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.content__wrapper .progress__title .btn-arrow svg {
+  transition: transform 0.3s;
+}
+.content__wrapper .progress__title .btn-arrow svg line {
+  transition: stroke 0.3s;
+}
+.content__wrapper .progress__title .btn-arrow:hover {
+  background: #0500FF;
+}
+.content__wrapper .progress__title .btn-arrow:hover svg line {
+  stroke: white;
+}
+.content__wrapper .progress__body {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s;
+  position: static;
+}
+.content__wrapper .progress__box .text {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.content__wrapper .progress__box .text p {
+  line-height: 140%;
+}
+.content__wrapper .progress__bar {
+  position: relative;
+  height: 38px;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #E0E0EF;
+  overflow: hidden;
+}
+.content__wrapper .progress__bar .bar__green {
+  height: 100%;
+  width: 10%;
+  max-width: 100%;
+  background: #8DE300;
+}
+.content__wrapper .progress__bar .lock-text {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  border-left: 1px solid #E0E0EF;
+  background: #FAFAFE;
+  height: 100%;
+  top: 0;
+  left: 15%;
+  width: 100%;
+  padding-left: 21px;
+}
+.content__wrapper .progress__bar .lock-text svg {
+  margin-right: 6px;
+}
+.content__wrapper .progress__bar .lock-text p {
+  margin-bottom: -4px;
+}
+.content__wrapper .progress__categories {
+  display: flex;
+  justify-content: space-between;
+  grid-column-gap: 57px;
+  overflow: hidden;
+  max-height: 320px;
+  transition: max-height 0.4s;
+}
+.content__wrapper .progress__categories .tools {
+  flex: 1;
+  margin-top: 37px;
+}
+.content__wrapper .progress__categories .tools h3 {
+  margin-bottom: 23px;
+}
+.content__wrapper .progress__categories .tools__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.content__wrapper .progress__categories .tools__title {
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+.content__wrapper .progress__categories .tools__bar .bar__grey {
+  height: 3px;
+  background: #ededf7;
+}
+.content__wrapper .progress__categories .tools__bar .bar__green {
+  margin-top: -3px;
+  height: 3px;
+  background: #8de300;
+}
+.content__wrapper .open-body .progress__categories {
+  max-height: 0;
+}
+.content__wrapper .open-body .progress__title .btn-arrow svg {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1024px) {
+  .content__wrapper .content-item {
+    padding: 0 0 20px;
+  }
+  .content__wrapper .content-item:not(.progress) {
+    padding-top: 20px;
+  }
+  .content__wrapper .content-item:not(.video-block) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .content__wrapper .progress {
+    padding-top: 17px;
+  }
+  .content__wrapper .progress__title {
+    margin-bottom: 13px;
+  }
+  .content__wrapper .progress__body small {
+    font-size: 16px;
+  }
+  .content__wrapper .progress p {
+    font-size: 16px;
+  }
+  .content__wrapper .progress__bar {
+    height: 20px;
+    margin-top: 10px;
+  }
+  .content__wrapper .progress__bar .lock-text {
+    padding-left: 7px;
+  }
+  .content__wrapper .progress__bar .lock-text svg {
+    width: 9px;
+    height: 12px;
+  }
+  .content__wrapper .progress__bar .lock-text svg path {
+    fill: #696978;
+  }
+  .content__wrapper .progress__bar .lock-text p {
+    display: none;
+  }
+  .content__wrapper .progress__categories {
+    flex-direction: column;
+    max-height: 450px;
+  }
+  .content__wrapper .progress__categories .tools {
+    margin-top: 30px;
+  }
+  .content__wrapper .progress__categories .tools h3 {
+    margin-bottom: 12px;
+  }
+  .content__wrapper .progress__categories .tools__item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  .content__wrapper .progress__title .btn-arrow {
+    height: 30px;
+    width: 30px;
+    min-width: 30px;
+    min-height: 30px;
+  }
+  .content__wrapper .progress__title .btn-arrow svg {
+    width: 16px;
+  }
+}
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Proxima Nova Rg", sans-serif;
+  font-size: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  font-size: 19px;
+  line-height: 130%;
+}
+
+.aside, .header__burger-box {
+  display: none;
+}
+
+.content__wrapper h1 {
+  margin-bottom: 56px;
+}
+.content__wrapper .course-name {
+  margin-bottom: 21px;
+}
+.content__wrapper .courses-item {
+  position: relative;
+  padding: 26px 0 40px;
+}
+.content__wrapper .item__header {
+  padding: 0 40px 40px;
+}
+.content__wrapper .item__header .content-item {
+  padding: 0;
+  position: static;
+}
+.content__wrapper .item__header .progress__title .btn-arrow svg {
+  transform: rotate(180deg);
+}
+.content__wrapper .item__header .progress__categories {
+  max-height: 0;
+}
+.content__wrapper .item__header .progress--open .progress__title .btn-arrow svg {
+  transform: rotate(0);
+}
+.content__wrapper .item__header .progress--open .progress__categories {
+  max-height: 350px;
+}
+.content__wrapper hr {
+  border: none;
+  margin-bottom: 40px;
+  background: #E0E0EF;
+  height: 1px;
+}
+.content__wrapper .courses-box {
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 19px;
+  grid-row-gap: 20px;
+  width: 100%;
+}
+.content__wrapper .courses-box__item {
+  border: 1px solid #E0E0EF;
+  padding: 32px 24px 30px;
+  border-radius: 10px;
+}
+.content__wrapper .courses-box__item .course-category {
+  display: flex;
+  margin-bottom: 12px;
+  grid-column-gap: 47px;
+}
+.content__wrapper .courses-box__item .subcourse-name {
+  margin-bottom: 18px;
+}
+.content__wrapper .courses-box__item .course-info {
+  display: flex;
+  grid-column-gap: 50px;
+  margin-bottom: 33px;
+  color: #9090A9;
+}
+.content__wrapper .courses-box__item .course-info .access {
+  display: flex;
+  align-items: center;
+}
+.content__wrapper .courses-box__item .course-info .access svg {
+  margin-right: 11px;
+}
+.content__wrapper .courses-box__item .course-info .access__free {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+}
+.content__wrapper .courses-box__item .course-info .access__paid {
+  width: 12px;
+  height: 15px;
+  min-width: 12px;
+}
+.content__wrapper .courses-box__item .course-info .students svg {
+  margin-right: 9px;
+}
+.content__wrapper .courses-box .free-course {
+  background: #FAFAFE;
+}
+.content__wrapper .courses-box .paid-course {
+  background: #202027;
+  color: white;
+}
+.content__wrapper .courses-box .paid-course .students svg path {
+  fill: #696978;
+}
+.content__wrapper .courses-box .paid-course .course-info {
+  color: #696978;
+}
+.content__wrapper .courses-box .paid-course .details-btn {
+  margin-top: 20px;
+  text-align: center;
+}
+.content__wrapper .courses-box .paid-course .d_grey-btn {
+  margin-top: 20px;
+}
+.content__wrapper .openSchedule-btn {
+  font-family: "Proxima Nova Sb", sans-serif;
+}
+
+.closed .main .content, .closed .main .footer {
+  width: 100%;
+  transform: translateX(0);
+}
+
+@media (max-width: 1024px) {
+  .aside {
+    display: block;
+  }
+
+  .header__burger-box {
+    display: flex;
+  }
+
+  .content__wrapper h1 {
+    margin-bottom: 20px;
+  }
+  .content__wrapper .course-name {
+    margin-bottom: 15px;
+  }
+  .content__wrapper .content-item {
+    padding: 0;
+  }
+  .content__wrapper .content-item:not(.progress) {
+    padding-top: 17px;
+    padding-bottom: 10px;
+  }
+  .content__wrapper .content-item:not(.video-block) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .content__wrapper .courses-item .item__header {
+    padding: 0 18px 30px;
+  }
+  .content__wrapper .courses-item .item__header .progress--open .progress__title .btn-arrow svg {
+    transform: rotate(0);
+  }
+  .content__wrapper .courses-item .item__header .progress--open .progress__categories {
+    max-height: 500px;
+  }
+  .content__wrapper .courses-item hr {
+    margin-bottom: 30px;
+  }
+  .content__wrapper .courses-item .courses-box {
+    padding: 0 10px;
+    grid-template-columns: 1fr;
+  }
+  .content__wrapper .courses-item .courses-box__item {
+    padding: 24px 10px 20px;
+  }
+  .content__wrapper .courses-item .courses-box__item .course-category {
+    padding: 0 5px;
+    justify-content: space-between;
+    margin-bottom: 11px;
+    flex-wrap: wrap;
+    grid-row-gap: 8px;
+  }
+  .content__wrapper .courses-item .courses-box__item .subcourse-name {
+    margin-bottom: 13px;
+    padding: 0 5px;
+    max-width: 210px;
+  }
+  .content__wrapper .courses-item .courses-box__item .course-info {
+    margin-bottom: 24px;
+    padding: 0 5px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    grid-row-gap: 8px;
+  }
+  .content__wrapper .courses-item .courses-box__item .course-info .access__free {
+    width: 6px;
+    height: 6px;
+    min-width: 6px;
+  }
+  .content__wrapper .courses-item .courses-box__item .course-info .access__paid {
+    width: 9px;
+    height: 12px;
+  }
+  .content__wrapper .courses-item .courses-box .students svg {
+    width: 23px;
+    height: 12px;
+    margin-right: 7px;
+  }
+  .content__wrapper .courses-item .courses-box .students span {
+    display: none;
+  }
+
+  .pages .courses-box__item .course-category {
+    flex-wrap: wrap;
+    justify-content: normal;
+  }
+  .pages .courses-box__item .course-category p {
+    width: 100%;
+  }
+
+  .overall-progress-box .progress-bar .lock-text p {
+    display: none;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+/*# sourceMappingURL=coursesPage.css.map */

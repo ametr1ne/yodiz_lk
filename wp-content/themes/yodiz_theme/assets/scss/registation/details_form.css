@@ -1,0 +1,121 @@
+.details {
+  max-width: 960px;
+  padding-bottom: 0;
+}
+.details h2 {
+  margin-bottom: 16px;
+}
+.details .correction {
+  font-size: 30px;
+  line-height: 130%;
+}
+.details__actions {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.details .names {
+  display: flex;
+  grid-column-gap: 40px;
+}
+.details .data-sex {
+  display: flex;
+  align-items: flex-end;
+  grid-column-gap: 55px;
+}
+.details .data-sex .sex {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.details .data-sex .sex span.error {
+  right: unset;
+}
+.details .data-sex .sex p {
+  margin-right: 17px;
+  margin-bottom: 0;
+}
+.details .data-sex .radio-sex {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  margin-top: -1000px;
+  appearance: none;
+}
+.details .data-sex .radio-sex:checked + .sex-btn {
+  border: black;
+  background-color: black;
+  color: white;
+}
+.details .data-sex .radio-sex:checked + .sex-btn:hover {
+  color: white;
+}
+.details .level-title {
+  margin-top: 35px;
+  max-width: 433px;
+}
+.details .skill-level {
+  display: flex;
+  grid-column-gap: 7px;
+  grid-row-gap: 7px;
+  margin-top: 17px;
+  position: relative;
+}
+.details .skill-level span.error {
+  right: unset;
+}
+.details .skill-level .level-item .level-input {
+  height: 0;
+  width: 0;
+  position: absolute;
+  margin-top: -1000px;
+  appearance: none;
+}
+.details .skill-level .level-item .level-input:checked + .level-label {
+  background-color: black;
+  color: white;
+  border: black;
+}
+.details .skill-level .level-item .level-input:checked + .level-label:hover {
+  color: white;
+}
+.details .submit-btn {
+  margin-top: 55px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+  .details .correction {
+    font-size: 19px;
+  }
+  .details .names {
+    flex-direction: column;
+  }
+  .details .data-sex {
+    flex-direction: column;
+  }
+  .details .data-sex .sex {
+    margin-top: 20px;
+  }
+  .details .data-sex .sex p {
+    margin-right: 0;
+  }
+  .details .data-sex .sex .sex-btn {
+    padding: 0 10px;
+  }
+  .details .level-title {
+    margin-top: 25px;
+  }
+  .details .skill-level {
+    flex-wrap: wrap;
+  }
+  .details .skill-level div {
+    width: unset;
+  }
+  .details .submit-btn {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+}
+
+/*# sourceMappingURL=details_form.css.map */

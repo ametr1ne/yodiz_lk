@@ -1,0 +1,1101 @@
+@import "webDesignerSkills/learningProgress.min.css";
+
+@font-face {
+    font-family: "Proxima Nova Sb";
+    src: url(../fonts/ProximaNova-Semibold.woff2) format("woff2"), url(../fonts/ProximaNova-Semibold.woff) format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "Proxima Nova Rg";
+    src: url(../fonts/ProximaNova-Regular.woff2) format("woff2"), url(../fonts/ProximaNova-Regular.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html {
+    font-size: 16px
+}
+
+body {
+    font-family: "Proxima Nova Rg", sans-serif;
+    font-size: 1rem;
+    position: relative;
+    display: block
+}
+
+ul {
+    list-style: none
+}
+
+ul li {
+    font-size: 19px;
+    line-height: 130%
+}
+
+h2 {
+    font-family: "Proxima Nova Sb", sans-serif;
+    font-size: 30px;
+    line-height: 130%;
+    letter-spacing: -.02em
+}
+
+@media (max-width: 767px) {
+    h2 {
+        font-size: 25px
+    }
+}
+
+header {
+    background-color: #000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    padding: 0 30px;
+    position: fixed;
+    z-index: 10
+}
+
+.header__logo {
+    transition: margin-left .4s
+}
+
+.header__wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.header__btn {
+    height: 54px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px
+}
+
+.header__btns {
+    display: flex;
+    grid-column-gap: 20px
+}
+
+.header__btns .header__user-btn {
+    border: 1px solid rgba(196, 196, 196, 0.5);
+    border-radius: 100px;
+    padding-left: 38px;
+    padding-right: 38px;
+    font-weight: 400;
+    transition: border .3s;
+}
+
+.header__btns .header__user-btn:hover {
+    border: 1px solid white;
+}
+
+.header__burger {
+    position: fixed;
+    z-index: 20;
+    padding: 0;
+    border: 0;
+    top: 25px;
+    left: 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s;
+    cursor: pointer;
+    background: transparent;
+    width: 27px;
+    height: 40px;
+    overflow: hidden
+}
+
+.header__burger .header__line {
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 36px;
+    background: #000;
+    border-radius: 2px;
+    -webkit-transition: .25s linear;
+    -moz-transition: .25s linear;
+    -ms-transition: .25s linear;
+    -o-transition: .25s linear;
+    transition: .25s linear;
+    background: #fff
+}
+
+.header__burger .closed .header__line {
+    background: #000
+}
+
+.header__burger .header__line--1 {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -4px;
+    left: 12px
+}
+
+.header__burger .header__line--2 {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 8px;
+    left: 12px;
+    transition-delay: .3s
+}
+
+.header__burger .header__line--3 {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 24px;
+    left: 40px;
+    transition-delay: 0s
+}
+
+.header__burger .header__line--2-fly {
+    top: 35px;
+    left: -15px;
+    transition-delay: 0s
+}
+
+.header__burger .header__line--3-fly {
+    top: -4px;
+    left: 12px;
+    transition-delay: .3s
+}
+
+@media (max-width: 767px) {
+    .header__burger {
+        top: 12px;
+        left: 15px
+    }
+}
+
+a {
+    cursor: pointer;
+    font-size: 19px;
+    line-height: 130%;
+    letter-spacing: -.02em;
+    color: #000;
+    font-weight: 400;
+    transition: color .3s;
+    text-decoration: none
+}
+
+a:not(.btn, li a):hover {
+    color: #0500FF;
+    transition: color .3s
+}
+
+@media (max-width: 767px) {
+    a {
+        font-size: 16px
+    }
+}
+
+.text-grey {
+    color: #A5A5BB
+}
+
+.aside {
+    left: 0;
+    top: 0;
+    position: fixed;
+    background: #fff;
+    height: 100%;
+    width: 480px;
+    transition: left .5s;
+    padding-top: 90px
+}
+
+.aside__wrap {
+    position: sticky;
+    top: 0;
+    padding: 35px 25px 35px 38px;
+    height: 100%
+}
+
+.aside__wrap .simplebar-track.simplebar-vertical {
+    width: 16px
+}
+
+.aside__wrap .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+    top: 9px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #F2F2FC;
+    border-radius: 100px;
+    opacity: 1;
+    width: 7px
+}
+
+.aside__wrap .simplebar-visible:before {
+    opacity: 1
+}
+
+.aside__close-btn {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer
+}
+
+.aside .buy-course__btn {
+    height: 54px;
+    width: auto;
+    display: none;
+    margin-left: -15px;
+    text-align: center
+}
+
+.aside .buy-course__btn svg {
+    display: none
+}
+
+.aside .course {
+    position: relative;
+    margin-bottom: 42px
+}
+
+.aside .course:not(:first-child):before {
+    content: "";
+    position: relative;
+    display: block;
+    margin-bottom: 45px;
+    background-color: #C2C2E7;
+    height: 1px;
+    margin-left: -15px
+}
+
+.aside .course__header div {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.aside .course__header div a {
+    color: #0500FF
+}
+
+.aside .course__header div p {
+    font-size: 19px
+}
+
+.aside .course__header div .price {
+    margin-right: 28px
+}
+
+.aside .course__progress {
+    margin-top: 32px
+}
+
+.aside .course__progress ul li {
+    position: relative;
+    font-weight: 400;
+    border-radius: 100px;
+    margin-left: -15px;
+    transition: background .3s;
+}
+
+.aside .course__progress ul .list-block {
+    margin-left: 0;
+}
+
+.aside .course__progress ul li a {
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 14px
+}
+
+.aside .course__progress ul li:not(.selected, .list-block):hover {
+    background: #F8F8FD;
+    cursor: pointer;
+    transition: background .3s
+}
+
+.aside .course__progress ul li .title-text {
+    padding-left: 48px;
+    display: flex;
+    align-items: center;
+    color: #000
+}
+
+.aside .course__progress ul li .title-text svg {
+    margin-right: 11px;
+    min-width: 8px;
+}
+
+.aside .course__progress ul li .title-text:hover {
+    color: #000
+}
+
+.aside .course__progress ul .course__block {
+    margin-top: 33px;
+    margin-bottom: 7px
+}
+
+.aside .course__progress ul .completed .title-text svg {
+    min-width: 8px
+}
+
+.aside .course__progress ul .completed .title-text svg circle {
+    fill: #8DE300
+}
+
+.aside .course__progress ul .selected {
+    background-color: #000;
+    color: #fff
+}
+
+.aside .course__progress ul .selected .title-text {
+    color: #fff
+}
+
+.aside .course__progress ul .selected .number {
+    color: #fff
+}
+
+.aside .course__progress ul .selected .title-text:hover {
+    color: #fff
+}
+
+.aside .course__progress ul .number {
+    position: absolute;
+    left: 15px
+}
+
+.close-aside .header__burger {
+    visibility: visible;
+    opacity: 1
+}
+
+.close-aside .header__logo {
+    margin-left: 50px
+}
+
+.close-aside .aside {
+    left: -480px
+}
+
+.close-aside .content {
+    margin-left: 0
+}
+
+.content {
+    padding: 54px 88px 45px 90px;
+    background: #F8F8FD;
+    margin-top: 90px;
+    margin-left: 480px;
+    transition: margin-left .5s
+}
+
+.footer p {
+    font-size: 19px;
+    line-height: 130%;
+    padding-right: 15px
+}
+
+.footer a:not(:last-child) {
+    margin-right: 30px
+}
+
+.footer .top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    grid-row-gap: 20px
+}
+
+.footer .bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    grid-row-gap: 20px
+}
+
+.footer .bottom .footer-left {
+    padding-right: 15px
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 200;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .4s;
+    width: 960px;
+    background: #FFF;
+    border-radius: 10px;
+    padding: 40px 34px
+}
+
+.popup__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.popup__content .lock {
+    margin-bottom: 17px
+}
+
+.popup__content h2 {
+    margin-bottom: 22px;
+    text-align: center
+}
+
+.popup__content p {
+    font-weight: 400;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: -.02em
+}
+
+.popup__content .free, .popup__content .free a {
+    font-size: 30px
+}
+
+.popup__content .paid {
+    font-size: 19px
+}
+
+.popup__content .popup__btn {
+    margin-top: 34px;
+    background-color: #0500FF;
+    border-radius: 100px;
+    padding: 0 177px;
+    height: 70px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .4s
+}
+
+.popup__content .popup__btn:hover {
+    background-color: red
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer
+}
+
+@media (max-width: 1024px) {
+    .popup {
+        width: 740px
+    }
+
+    .popup__content .free, .popup__content .free a {
+        font-size: 25px
+    }
+}
+
+@media (max-width: 767px) {
+    .popup {
+        margin: auto;
+        width: 95%;
+        right: 0;
+        left: 0;
+        transform: translate(0, -50%);
+        padding: 20px 18px
+    }
+
+    .popup__content .free, .popup__content .free a {
+        font-size: 19px
+    }
+
+    .popup__content .paid {
+        font-size: 16px
+    }
+
+    .popup__content .popup__btn {
+        width: 100%;
+        height: 60px;
+        padding: 0 15px
+    }
+
+    .free-popup {
+        padding-top: 50px
+    }
+}
+
+.dark-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 130%;
+    width: 100%;
+    z-index: 150;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.showMarafonePopup {
+    overflow: hidden
+}
+
+.showMarafonePopup .dark-popup {
+    display: block
+}
+
+.showMarafonePopup .marafon-popup {
+    visibility: visible;
+    opacity: 1
+}
+
+.showFreePopup {
+    overflow: hidden
+}
+
+.showFreePopup .free-popup {
+    visibility: visible;
+    opacity: 1
+}
+
+.showFreePopup .dark-popup {
+    display: block
+}
+
+.showPaidPopup {
+    overflow: hidden
+}
+
+.showPaidPopup .paid-popup {
+    visibility: visible;
+    opacity: 1
+}
+
+.showPaidPopup .dark-popup {
+    display: block
+}
+
+.btn {
+    cursor: pointer;
+    font-family: "Proxima Nova Sb", sans-serif
+}
+
+.play-btn {
+    display: flex;
+    background: #0500FF;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    justify-content: center;
+    align-items: center
+}
+
+.play-btn svg {
+    margin-right: -12px
+}
+
+@media (max-width: 767px) {
+    .play-btn {
+        height: 70px;
+        width: 70px
+    }
+
+    .play-btn svg {
+        width: 25px;
+        height: 30px;
+        margin-right: -8px
+    }
+}
+
+.buy-course__btn {
+    display: flex;
+    background: #0500FF;
+    border-radius: 100px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    width: 470px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: background .3s
+}
+
+.buy-course__btn svg {
+    margin-right: 14px
+}
+
+.buy-course__btn:hover {
+    background: red
+}
+
+@media (max-width: 767px) {
+    .buy-course__btn {
+        width: 100%
+    }
+
+    .buy-course__btn svg {
+        display: none
+    }
+}
+
+@media (max-width: 1360px) {
+    html {
+        font-size: 14px
+    }
+
+    .header__logo {
+        margin-left: 50px
+    }
+
+    .header__burger {
+        left: 30px;
+        visibility: visible;
+        opacity: 1
+    }
+
+    .aside {
+        left: -100%;
+        transition: left .5s ease-out;
+        z-index: 15
+    }
+
+    .aside__close-btn {
+        display: none
+    }
+
+    .aside__wrap {
+        height: 100%
+    }
+
+    .aside .buy-course__btn {
+        display: flex
+    }
+
+    .aside .course__progress {
+        margin-top: 30px
+    }
+
+    .content {
+        padding: 40px 35px 30px;
+        margin-left: 0
+    }
+
+    .content__wrapper {
+        max-width: unset
+    }
+
+    .open-aside {
+        overflow: hidden
+    }
+
+    .open-aside .dark {
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 11;
+        background-color: rgba(0, 0, 0, 0.6)
+    }
+
+    .open-aside .header__burger .header__line {
+        background: #000
+    }
+
+    .open-aside .aside {
+        left: 0
+    }
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: 10px
+    }
+
+    .header {
+        height: 64px
+    }
+
+    .header__logo {
+        margin-left: 30px
+    }
+
+    .header__logo svg {
+        width: 50px
+    }
+
+    .header__burger {
+        left: 15px
+    }
+
+    .header__buy-course {
+        display: none
+    }
+
+    ul li {
+        font-size: 16px
+    }
+
+    .buy-course__btn {
+        font-size: 16px
+    }
+
+    .aside {
+        width: 100%;
+        min-width: 100%;
+        padding-top: 64px
+    }
+
+    .aside .buy-course__btn {
+        margin-right: -10px;
+        margin-left: -10px
+    }
+
+    .aside .empty {
+        height: 50px
+    }
+
+    .aside__wrap {
+        padding: 20px 30px 25px 15px
+    }
+
+    .aside .course {
+        margin-bottom: 25px
+    }
+
+    .aside .course:not(:first-child):before {
+        margin-bottom: 28px;
+        margin-right: -10px;
+        margin-left: -10px
+    }
+
+    .aside .course__header div .price {
+        margin-right: 18px;
+        font-size: 14px
+    }
+
+    .aside .course__header div p {
+        font-size: 14px
+    }
+
+    .aside .course__block {
+        font-size: 14px;
+        margin-top: 15px
+    }
+
+    .aside .course__progress {
+        margin-top: 12px
+    }
+
+    .aside .course__progress ul li {
+        margin-right: -10px;
+        margin-left: -10px
+    }
+
+    .content {
+        margin-top: 64px;
+        padding: 20px 15px
+    }
+
+    .footer p {
+        font-size: 16px
+    }
+
+    .footer .top {
+        grid-row-gap: 12px
+    }
+
+    .footer .bottom {
+        margin-top: 0;
+        grid-row-gap: 0
+    }
+
+    .footer .bottom .footer-left {
+        display: flex;
+        flex-wrap: wrap
+    }
+
+    .footer .bottom .footer-left a {
+        margin-bottom: 12px
+    }
+
+    .footer .messengers {
+        display: flex;
+        flex-wrap: wrap
+    }
+
+    .footer .messengers a {
+        margin-bottom: 12px
+    }
+
+    .footer a:not(:last-child) {
+        margin-right: 15px
+    }
+}
+
+.content__wrapper {
+    max-width: 960px
+}
+
+.content__wrapper .breadcrumbs {
+    font-size: 19px
+}
+
+.content__wrapper h1 {
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 110%;
+    letter-spacing: -.04em;
+    margin-top: 23px;
+    padding-right: 15px;
+    margin-bottom: 43px;
+}
+
+.content__wrapper .content-item {
+    background: #FFF;
+    border-radius: 10px
+}
+
+.content__wrapper .content-item:not(:last-child) {
+    margin-bottom: 60px
+}
+
+@media (max-width: 767px) {
+    .content__wrapper .breadcrumbs {
+        font-size: 16px
+    }
+
+    .content__wrapper h1 {
+        margin-top: 12px;
+        margin-bottom: 40px;
+    }
+
+    .content__wrapper .content-item:not(:last-child) {
+        margin-bottom: 30px
+    }
+}
+
+.video-block {
+    padding: 24px 0 32px
+}
+
+.video-block h2 {
+    padding: 0 40px
+}
+
+.video-block .video {
+    margin-top: 20px;
+    margin-bottom: 32px;
+    height: 540px;
+    background-color: #ff0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    cursor: pointer
+}
+
+.video-block ul {
+    padding: 0 40px
+}
+
+.video-block ul li a {
+    color: #000;
+    transition: color .3s;
+    display: flex
+}
+
+.video-block ul li:not(:last-child) {
+    margin-bottom: 12px
+}
+
+.video-block ul li svg {
+    margin-top: 6px;
+    margin-right: 18px;
+    min-width: 8px
+}
+
+.video-block ul .pressed a {
+    color: #0500FF;
+    transition: color .3s
+}
+
+@media (max-width: 767px) {
+    .video-block h2 {
+        padding-right: 15px;
+        padding-left: 15px
+    }
+
+    .video-block .video {
+        height: 210px;
+        margin-top: 14px;
+        margin-bottom: 15px
+    }
+
+    .video-block ul {
+        padding-left: 15px;
+        padding-right: 15px
+    }
+
+    .video-block ul li a svg {
+        margin-right: 10px;
+        margin-top: 4px
+    }
+}
+
+.materials {
+    padding: 25px 39px 39px;
+    display: flex;
+    flex-direction: column
+}
+
+.materials h2 {
+    margin-bottom: 21px
+}
+
+.materials a:not(:last-child) {
+    margin-bottom: 12px
+}
+
+@media (max-width: 767px) {
+    .materials h2 {
+        margin-bottom: 14px
+    }
+}
+
+.checking-hw {
+    padding: 25px 53px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.checking-hw h2 {
+    margin-bottom: 30px
+}
+
+.checking-hw__avatars {
+    margin-bottom: 25px;
+    display: flex
+}
+
+.checking-hw__avatars .avatars-item:first-child {
+    z-index: 3;
+    margin-right: -17px
+}
+
+.checking-hw__avatars .avatars-item:nth-child(2) {
+    z-index: 2;
+    margin-right: -17px
+}
+
+.checking-hw p {
+    font-size: 1.875rem;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: -.02em
+}
+
+.checking-hw .checking-hw__buy-course {
+    margin: 20px auto 0;
+    width: 608px;
+    height: 70px
+}
+
+.paid-hw .send-hw {
+    display: flex;
+    background: #0500ff;
+    border-radius: 100px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    width: 470px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 70px;
+    transition: background .3s;
+}
+
+.paid-hw .send-hw:hover {
+    background: #ff0000;
+}
+
+@media (max-width: 767px) {
+    .checking-hw h2 {
+        margin-bottom: 15px
+    }
+
+    .checking-hw__avatars {
+        margin-bottom: 15px
+    }
+
+    .checking-hw__avatars img {
+        width: 70px
+    }
+
+    .checking-hw .checking-hw__buy-course {
+        width: 100%;
+        height: 54px;
+        text-align: center
+    }
+
+    .paid-hw .send-hw {
+        font-size: 16px;
+        width: 100%;
+        height: 60px;
+    }
+}
+
+.next-lesson {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 38px;
+    align-items: center;
+    font-family: "Proxima Nova Sb", sans-serif;
+    font-size: 1.875rem;
+    line-height: 140%;
+    color: #000;
+    transition: color 0.3s, background-color .3s
+}
+
+.next-lesson svg {
+    padding-left: 10px
+}
+
+.next-lesson svg path {
+    transition: fill .3s
+}
+
+.next-lesson:hover {
+    background-color: #000;
+    color: #fff !important
+}
+
+.next-lesson:hover svg path {
+    fill: #fff
+}

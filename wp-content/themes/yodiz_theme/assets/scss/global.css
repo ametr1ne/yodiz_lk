@@ -1,0 +1,316 @@
+@font-face {
+  font-family: "Proxima Nova Sb";
+  src: url(../fonts/ProximaNova-Semibold.woff2) format("woff2"), url(../fonts/ProximaNova-Semibold.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Proxima Nova Rg";
+  src: url(../fonts/ProximaNova-Regular.woff2) format("woff2"), url(../fonts/ProximaNova-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Proxima Nova Rg", sans-serif;
+  position: relative;
+  display: block;
+}
+
+h1 {
+  font-family: "Proxima Nova Sb", sans-serif;
+  font-size: 80px;
+  line-height: 110%;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  font-family: "Proxima Nova Sb", sans-serif;
+  font-size: 55px;
+  line-height: 110%;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-family: "Proxima Nova Sb", sans-serif;
+  font-size: 30px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+}
+
+p {
+  font-size: 30px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:not(.btn) {
+  transition: color 0.3s;
+}
+a:not(.btn):hover {
+  color: #0500FF;
+}
+
+ul {
+  list-style: none;
+}
+ul li {
+  font-size: 19px;
+  line-height: 130%;
+}
+ul li a, ul li p {
+  font-size: 19px;
+  line-height: 130%;
+}
+
+.text-grey {
+  color: #9090A9;
+}
+
+/*---------- buttons start -----------------*/
+.btn {
+  font-family: "Proxima Nova Sb", sans-serif;
+  display: flex;
+  cursor: pointer;
+  border-radius: 100px;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  line-height: 140%;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 70px;
+  transition: border 0.3s, background 0.3s, color 0.3s, fill 0.3s;
+}
+.btn svg {
+  margin-right: 7px;
+}
+
+.blue-btn {
+  background: #0500FF;
+  color: white;
+  width: 100%;
+  transition: background 0.3s;
+}
+.blue-btn svg path {
+  fill: white;
+}
+.blue-btn:hover {
+  background: #0400D0;
+}
+
+.header-btn {
+  height: 50px;
+}
+
+.greyborder-btn {
+  color: black;
+  padding-right: 36px;
+  padding-left: 36px;
+  border: 1px solid #D2D2E7;
+}
+.greyborder-btn:hover {
+  border: 1px solid #0500FF;
+  color: #0500FF;
+}
+
+.d_greyborder-btn {
+  color: #696978;
+  padding-right: 36px;
+  padding-left: 36px;
+  border: 1px solid #3D3D4D;
+}
+.d_greyborder-btn:hover {
+  border: 1px solid #FFF444;
+  color: #FFF444;
+}
+
+.blackborder-btn {
+  color: black;
+  padding-right: 36px;
+  padding-left: 36px;
+  border: 1px solid black;
+}
+.blackborder-btn:hover {
+  background: black;
+  color: white;
+}
+
+.grey-btn {
+  color: #9090A9;
+  border: 1px solid #D2D2E7;
+  padding-left: 45px;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.grey-btn .teachers {
+  display: flex;
+  align-items: center;
+}
+.grey-btn .teachers img {
+  height: 50px;
+  width: 50px;
+  filter: grayscale(40%);
+  transition: filter 0.3s;
+}
+.grey-btn .teachers img:not(:last-child) {
+  margin-right: -10px;
+}
+.grey-btn .teachers .dima {
+  z-index: 3;
+}
+.grey-btn .teachers .lika {
+  z-index: 2;
+}
+.grey-btn:hover {
+  border: 1px solid #0500FF;
+  color: #0500FF;
+}
+.grey-btn:hover img {
+  filter: grayscale(0%);
+}
+
+.user-btn {
+  color: #202027;
+  background: white;
+  padding: 0 36px;
+  font-family: "Proxima Nova Rg", sans-serif;
+}
+.user-btn svg {
+  height: 15px;
+  width: 13px;
+  margin-right: 13px;
+}
+.user-btn:hover {
+  background: #FFF444;
+}
+
+.yellow-btn {
+  color: black;
+  background: #FFF444;
+  padding: 0 10px;
+}
+.yellow-btn:hover {
+  background: #FFE600;
+}
+
+/*------------- buttons end ----------------*/
+.header {
+  background: #202027;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  padding: 0 30px;
+  position: fixed;
+  z-index: 10;
+}
+.header__left {
+  display: flex;
+  align-items: center;
+  grid-column-gap: 48px;
+}
+.header__btns {
+  display: flex;
+  grid-column-gap: 30px;
+}
+.header__wrapper {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.header a:not(.btn) {
+  color: white;
+}
+.header a:not(.btn):hover {
+  color: #FFF444;
+}
+
+.main {
+  background: #FAFAFE;
+}
+.main .content-item {
+  background: white;
+}
+
+.footer {
+  background: white;
+  padding: 50px 70px 53px;
+}
+.footer p, .footer a {
+  font-size: 19px;
+  line-height: 130%;
+}
+.footer a {
+  transition: color 0.3s;
+}
+.footer a:hover {
+  color: #0500FF;
+}
+.footer .juri-name {
+  display: flex;
+  align-items: center;
+}
+.footer .juri-name svg {
+  margin-right: 19px;
+}
+.footer .top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-left, .footer .messengers {
+  display: flex;
+  grid-column-gap: 20px;
+}
+.footer .bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 40px;
+    line-height: 110%;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    font-size: 19px;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+  }
+
+  .header-btn {
+    height: 45px;
+  }
+}
+
+/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,203 @@
+@import "global";
+@import "registation/details_form";
+@import "registation/forms";
+@import "sidebar";
+
+form {
+  margin: 0;
+  max-width: unset;
+}
+
+.aside {
+  display: none;
+}
+
+.header__burger-box {
+  display: none;
+}
+
+.content-item {
+  padding: 37px 44px 40px;
+
+  h2 {
+    margin-bottom: 22px;
+  }
+
+  .submit-btn {
+    margin-bottom: 9px;
+  }
+
+  .bottom {
+    display: flex;
+    grid-column-gap: 40px;
+  }
+}
+
+#personal-form {
+  max-width: unset;
+
+  h3 {
+    margin-bottom: 26px;
+  }
+}
+
+.settings-block {
+  padding-left: 57px;
+  padding-right: 57px;
+
+  h3 {
+    margin-bottom: 22px;
+  }
+
+  .text {
+    display: flex;
+  }
+
+  p {
+    font-size: 19px;
+
+    &:not(:last-child) {
+      margin-right: 27px;
+    }
+  }
+}
+
+.changing-pass {
+  h3 {
+    padding: 0 13px;
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 767px) {
+    h2 {
+      margin-bottom: 20px;
+    }
+    .bottom {
+      flex-direction: column;
+    }
+  }
+}
+
+.settings-block {
+  .details__actions {
+    margin-bottom: 0;
+  }
+}
+
+.ref-input {
+  display: flex;
+  margin-top: 65px;
+  position: relative;
+
+  .input {
+    width: 100%;
+    margin-top: 0;
+    z-index: unset;
+  }
+
+  .copy-btn {
+    border: none;
+    position: absolute;
+    right: 0;
+    transform: translateY(50%);
+    cursor: pointer;
+    color: $yz_grey;
+    font-size: 19px;
+    font-family: "Proxima Nova Rg", sans-serif;
+    background: none;
+    transition: color .4s;
+
+    &:hover {
+      color: $yz_blue_lite;
+    }
+  }
+}
+
+.closed {
+  .main {
+    .content, .footer {
+      width: 100%;
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+
+  a, p {
+    font-size: 16px;
+  }
+
+  .header {
+    &__burger-box {
+      display: flex;
+    }
+  }
+
+  .aside {
+    display: block;
+  }
+
+  .content {
+    margin-top: 50px;
+    padding: 25px 10px 50px;
+
+    form {
+      padding: 21px 10px 20px;
+    }
+
+    .content-item {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  #personal-form {
+    h3 {
+      margin-bottom: 14px;
+    }
+  }
+
+  .settings-block {
+    padding: 21px 19px 23px;
+
+    h3 {
+      margin-bottom: 14px;
+    }
+  }
+
+  .ref-block {
+    h3 {
+      margin-bottom: 24px;
+    }
+    .details__actions {
+      padding: 0;
+    }
+    .ref-input {
+      margin-top: 0;
+      flex-direction: column;
+
+      .input {
+        padding-top: 0;
+      }
+
+      .copy-btn {
+        transform: translateY(0);
+        margin-top: 1px;
+        width: min-content;
+        position: static;
+      }
+    }
+  }
+
+  .changing-pass {
+    .bottom {
+      flex-direction: column;
+    }
+  }
+
+  .closed {
+
+  }
+}

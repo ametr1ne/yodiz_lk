@@ -1,0 +1,201 @@
+.border-btn {
+  transition: color 0.4s, border 0.4s;
+}
+.border-btn:hover {
+  border: 1px solid black;
+  color: black;
+}
+
+span.error {
+  position: absolute;
+  right: 0;
+  color: red;
+  font-size: 12px;
+  top: 106%;
+}
+
+::-ms-reveal {
+  display: none;
+}
+
+.input {
+  outline: none;
+  padding: 9px 0 9px;
+  font-size: 19px;
+  line-height: 140%;
+  border: none;
+  background: none;
+  margin: 34px 2px 0;
+  border-bottom: 1px solid #E0E0EF;
+  z-index: 2;
+}
+
+form {
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 26px 38px 22px;
+  max-width: 490px;
+  margin: 135px auto 100px;
+}
+form div.error {
+  color: red;
+  margin-bottom: 10px;
+}
+form .input.error {
+  border-bottom: 1px solid red;
+}
+form a {
+  color: #0500FF;
+  transition: color 0.4s;
+}
+form a:hover {
+  color: #ff0000 !important;
+}
+form .recovery {
+  display: block;
+  margin-bottom: 12px;
+}
+form .text-grey {
+  color: #9090A9;
+}
+form label, form p {
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 140%;
+}
+form h2 {
+  font-family: "Proxima Nova Sb", sans-serif;
+  font-size: 30px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin-bottom: 27px;
+}
+form div {
+  width: 100%;
+}
+form .input-block {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+form .input-block label {
+  position: absolute;
+  bottom: 10px;
+  cursor: text;
+  transition: bottom 0.4s, transform 0.4s;
+  transform: scale(1);
+  transform-origin: left;
+}
+form .moving-label label {
+  bottom: 42px;
+  margin-right: auto;
+  transform: scale(0.84, 0.84);
+}
+form .submit-btn {
+  cursor: pointer;
+  border: none;
+  margin: 40px 2px 41px;
+  background: #0500FF;
+  border-radius: 100px;
+  width: 100%;
+  height: 70px;
+  color: white;
+  font-size: 19px;
+  line-height: 140%;
+  font-family: "Proxima Nova Sb", sans-serif;
+  transition: background 0.4s;
+}
+form .submit-btn:hover {
+  background: #ff0000;
+}
+form p:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.mail-sent {
+  display: none;
+  font-size: 30px;
+  line-height: 130%;
+}
+
+.recovery-password .mail-sent {
+  display: block;
+  margin-bottom: 128px;
+}
+.recovery-password .email {
+  display: none;
+}
+.recovery-password .recovery-btn {
+  display: none;
+}
+
+.sex-btn {
+  border: 1px solid #E0E0EF;
+  box-sizing: border-box;
+  border-radius: 100px;
+  height: 41px;
+  padding: 0 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border 0.3s, color 0.3s;
+  cursor: pointer;
+}
+.sex-btn:not(:first-child) {
+  margin-left: 10px;
+}
+
+.login-btn {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.login-btn:hover {
+  color: white !important;
+}
+
+.level-label {
+  border: 1px solid #E0E0EF;
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: 41px;
+  width: 41px;
+  min-width: 41px;
+  cursor: pointer;
+  transition: border 0.3s, color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9090A9;
+}
+
+@media (max-width: 767px) {
+  .input {
+    margin: 25px 2px 0;
+    font-size: 16px;
+  }
+
+  form {
+    margin-top: 50px;
+    width: 100%;
+    padding: 20px 30px 16px;
+  }
+  form h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  form label, form p {
+    font-size: 16px;
+  }
+  form .submit-btn {
+    height: 60px;
+    font-size: 16px;
+    margin: 30px 2px;
+  }
+  form .moving-label label {
+    bottom: 30px;
+  }
+}
+
+/*# sourceMappingURL=forms.css.map */

@@ -1,0 +1,34 @@
+@import "global";
+@import "registation/forms";
+@import "registation/details_form";
+
+html {
+  height: calc(100% - 90px);
+}
+body {
+  height: 100%;
+}
+
+.main {
+  background: $yz_white_lite;
+  height: 100%;
+}
+
+form {
+  padding: 37px 44px 33px;
+  max-width: 570px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .header-btn {
+    padding: 0 20px;
+  }
+  .btn2_dark {
+    display: none;
+  }
+  form {
+    padding: 20px 10px 14px;
+    max-width: unset;
+  }
+}

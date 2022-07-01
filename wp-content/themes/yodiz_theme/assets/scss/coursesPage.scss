@@ -1,0 +1,291 @@
+@import "global";
+@import "sidebar";
+@import "progressBlock";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Proxima Nova Rg", sans-serif;
+  font-size: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column
+}
+
+p {
+  font-size: 19px;
+  line-height: 130%;
+}
+
+.aside, .header__burger-box {
+  display: none;
+}
+
+.content__wrapper {
+  h1 {
+    margin-bottom: 56px;
+  }
+  .course-name {
+    margin-bottom: 21px;
+  }
+
+  .courses-item {
+    position: relative;
+    padding: 26px 0 40px;
+  }
+
+  .item__header {
+    padding: 0 40px 40px;
+
+    .content-item {
+      padding: 0;
+      position: static;
+    }
+
+    .progress {
+      &__title {
+        .btn-arrow {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      &__categories {
+        max-height: 0;
+      }
+    }
+
+    .progress--open {
+      .progress__title {
+        .btn-arrow {
+          svg {
+            transform: rotate(0);
+          }
+        }
+      }
+      .progress__categories {
+        max-height: 350px;
+      }
+    }
+  }
+
+  hr {
+    border: none;
+    margin-bottom: 40px;
+    background: #E0E0EF;
+    height: 1px;
+  }
+
+  .courses-box {
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 19px;
+    grid-row-gap: 20px;
+    width: 100%;
+
+    &__item {
+      border: 1px solid #E0E0EF;
+      padding: 32px 24px 30px;
+      border-radius: 10px;
+
+      .course-category {
+        display: flex;
+        margin-bottom: 12px;
+        grid-column-gap: 47px;
+      }
+      .subcourse-name {
+        margin-bottom: 18px;
+      }
+      .course-info {
+        display: flex;
+        grid-column-gap: 50px;
+        margin-bottom: 33px;
+        color: $yz_grey;
+
+        .access {
+          display: flex;
+          align-items: center;
+          svg {
+            margin-right: 11px;
+          }
+          &__free {
+            width: 8px;
+            height: 8px;
+            min-width: 8px;
+          }
+          &__paid {
+            width: 12px;
+            height: 15px;
+            min-width: 12px;
+          }
+        }
+        .students {
+          svg {
+            margin-right: 9px;
+          }
+        }
+      }
+    }
+
+    .free-course {
+      background: $yz_white_lite;
+    }
+    .paid-course {
+      background: $yz_black_lite;
+      color: white;
+
+      .students {
+        svg path {
+          fill: $yz_dgrey_lite;
+        }
+      }
+
+      .course-info {
+        color: $yz_dgrey_lite;
+      }
+      .details-btn {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .d_grey-btn {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .openSchedule-btn {
+    font-family: "Proxima Nova Sb", sans-serif;
+  }
+}
+
+.closed {
+  .main {
+    .content, .footer {
+      width: 100%;
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .aside {
+    display: block;
+  }
+  .header__burger-box {
+    display: flex;
+  }
+  .content__wrapper {
+    h1 {
+      margin-bottom: 20px;
+    }
+    .course-name {
+      margin-bottom: 15px;
+    }
+    .content-item {
+      padding: 0;
+
+      &:not(.progress) {
+        padding-top: 17px;
+        padding-bottom: 10px;
+      }
+
+      &:not(.video-block) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    .courses-item {
+
+      .item__header {
+        padding: 0 18px 30px;
+
+        .progress--open {
+          .progress__title {
+            .btn-arrow {
+              svg {
+                transform: rotate(0);
+              }
+            }
+          }
+          .progress__categories {
+            max-height: 500px;
+          }
+        }
+      }
+
+      hr {
+        margin-bottom: 30px;
+      }
+
+      .courses-box {
+        padding: 0 10px;
+        grid-template-columns: 1fr;
+
+        &__item {
+          padding: 24px 10px 20px;
+
+          .course-category {
+            padding: 0 5px;
+            justify-content: space-between;
+            margin-bottom: 11px;
+            flex-wrap: wrap;
+            grid-row-gap: 8px;
+          }
+          .subcourse-name {
+            margin-bottom: 13px;
+            padding: 0 5px;
+            max-width: 210px;
+          }
+          .course-info {
+            margin-bottom: 24px;
+            padding: 0 5px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            grid-row-gap: 8px;
+
+            .access {
+              &__free {
+                width: 6px;
+                height: 6px;
+                min-width: 6px;
+              }
+              &__paid {
+                width: 9px;
+                height: 12px;
+              }
+            }
+          }
+        }
+
+        .students {
+          svg {
+            width: 23px;
+            height: 12px;
+            margin-right: 7px;
+          }
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .pages .courses-box__item .course-category {
+    flex-wrap: wrap;
+    justify-content: normal;
+    p {
+      width: 100%;
+    }
+  }
+  .overall-progress-box .progress-bar .lock-text {
+    p {
+      display: none;
+    }
+  }
+  p {
+    font-size: 16px;
+  }
+}

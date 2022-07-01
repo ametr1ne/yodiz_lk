@@ -30,7 +30,6 @@ function registration() {
 			'parameters' => [ 'userID' => $newUserId ],
 			'url'    => '' . home_url() . '/registationsecondstep'
 		) );
-
 	} else {
 		echo json_encode( array(
 			'status'    => 'error',
@@ -96,12 +95,8 @@ function authorization() {
 				'url'        => home_url() . '/courses'
 			) );
 
-		} else {
-			echo json_encode( array( 'status' => 'error', 'textError' => 'Пароли не совпадают' ) );
-		}
-	} else {
-		echo json_encode( array( 'status' => 'error', 'textError' => 'Пользователь с таким email не найден' ) );
-	}
+		} else echo json_encode( array( 'status' => 'error', 'textError' => 'Пароли не совпадают' ) );
+	} else echo json_encode( array( 'status' => 'error', 'textError' => 'Пользователь с таким email не найден' ) );
 
 	wp_die();
 }

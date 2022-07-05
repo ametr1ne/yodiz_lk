@@ -23,9 +23,25 @@ include 'bitrix/BitrixBackend_Course.php';
 include 'bitrix/BitrixBackend_Deal.php';
 include 'bitrix/BitrixBackend_Lesson.php';
 
-$curl = curl_init('http://localhost/lk_wp/wp/v2/users');
-
-var_dump($curl);
+//$url = 'http://localhost/lk_wp/wp-json/v2/users';
+//
+//$curl = curl_init();
+//
+//curl_setopt_array( $curl, array(
+//	CURLOPT_SSL_VERIFYPEER => 0,
+//	CURLOPT_POST           => 1,
+//	CURLOPT_HEADER         => 0,
+//	CURLOPT_RETURNTRANSFER => 1,
+//	CURLOPT_URL            => $url,
+//	CURLOPT_TIMEOUT => 10
+////	CURLOPT_POSTFIELDS     => $queryData
+//) );
+//
+//$result = curl_exec( $curl );
+//var_dump(curl_getinfo($curl));
+//curl_close( $curl );
+//
+////var_dump($result);
 
 if (isset(get_user_meta(get_current_user_id(), 'lessonsProgress')[0])) {
 
@@ -212,23 +228,23 @@ function formData($postData)
 function checkingUser($post)
 {
 
-//	if ( $post->post_name === 'user_account' ) {
-//		$courseID = $_SESSION['parentID'];
-//	} else {
-//		$courseID = get_post_ancestors( $post->ID )[1];
-//	}
-//
-//	$lessonsProgress = json_decode( get_user_meta( get_current_user_id(), 'lessonsProgress' )[0] );
-//	$userAccess      = $lessonsProgress->$courseID->access;
-//
-//	if ( $userAccess ) {
-//		foreach ( $lessonsProgress->$courseID->list as $course ) {
-//			if ( $course->courseType === 'paid' ) {
-//				$course->lessons->{0}->isCompleted = true;
-//				update_user_meta( get_current_user_id(), 'lessonsProgress', json_encode( $lessonsProgress, JSON_UNESCAPED_UNICODE ) );
-//			}
-//		}
-//	}
+	if ( $post->post_name === 'user_account' ) {
+		$courseID = $_SESSION['parentID'];
+	} else {
+		$courseID = get_post_ancestors( $post->ID )[1];
+	}
+
+	$lessonsProgress = json_decode( get_user_meta( get_current_user_id(), 'lessonsProgress' )[0] );
+	$userAccess      = $lessonsProgress->$courseID->access;
+
+	if ( $userAccess ) {
+		foreach ( $lessonsProgress->$courseID->list as $course ) {
+			if ( $course->courseType === 'paid' ) {
+				$course->lessons->{0}->isCompleted = true;
+				update_user_meta( get_current_user_id(), 'lessonsProgress', json_encode( $lessonsProgress, JSON_UNESCAPED_UNICODE ) );
+			}
+		}
+	}
 }
 
 function checkingAvailableCourses($post)

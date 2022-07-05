@@ -204,4 +204,5 @@ function newPass() {
 	wp_die();
 }
 
+
 ?>

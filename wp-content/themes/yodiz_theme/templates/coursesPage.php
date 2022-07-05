@@ -5,7 +5,8 @@
 
 /* Общая информация для всех сраниц */
 
-if ( ! isset( $_COOKIE['userID'] ) ) {
+if ( isset( $_COOKIE['userID'] ) ) {
+    var_dump('hello');
 	header( 'Location: ' . home_url() . '/authorization' );
 }
 

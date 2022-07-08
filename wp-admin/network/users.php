@@ -32,7 +32,7 @@ if ( isset( $_GET['action'] ) ) {
 
 				// Used in the HTML title tag.
 				$title       = __( 'Users' );
-				$parent_file = 'users.php';
+				$parent_file = 'Users.php';
 
 				require_once ABSPATH . 'wp-admin/admin-header.php';
 
@@ -42,7 +42,7 @@ if ( isset( $_GET['action'] ) ) {
 
 				require_once ABSPATH . 'wp-admin/admin-footer.php';
 			} else {
-				wp_redirect( network_admin_url( 'users.php' ) );
+				wp_redirect( network_admin_url( 'Users.php' ) );
 			}
 			exit;
 
@@ -67,7 +67,7 @@ if ( isset( $_GET['action'] ) ) {
 
 								// Used in the HTML title tag.
 								$title       = __( 'Users' );
-								$parent_file = 'users.php';
+								$parent_file = 'Users.php';
 
 								require_once ABSPATH . 'wp-admin/admin-header.php';
 
@@ -145,7 +145,7 @@ if ( isset( $_GET['action'] ) ) {
 					)
 				);
 			} else {
-				$location = network_admin_url( 'users.php' );
+				$location = network_admin_url( 'Users.php' );
 
 				if ( ! empty( $_REQUEST['paged'] ) ) {
 					$location = add_query_arg( 'paged', (int) $_REQUEST['paged'], $location );
@@ -200,7 +200,7 @@ if ( isset( $_GET['action'] ) ) {
 						'updated' => 'true',
 						'action'  => $deletefunction,
 					),
-					network_admin_url( 'users.php' )
+					network_admin_url( 'Users.php' )
 				)
 			);
 			exit;
@@ -219,7 +219,7 @@ if ( $pagenum > $total_pages && $total_pages > 0 ) {
 
 // Used in the HTML title tag.
 $title       = __( 'Users' );
-$parent_file = 'users.php';
+$parent_file = 'Users.php';
 
 add_screen_option( 'per_page' );
 

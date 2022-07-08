@@ -373,7 +373,7 @@ function get_blog_id_from_url( $domain, $path = '/' ) {
  *
  * This function checks against the Banned Email Domains list
  * at wp-admin/network/settings.php. The check is only run on
- * self-registrations; user creation at wp-admin/network/users.php
+ * self-registrations; user creation at wp-admin/network/Users.php
  * bypasses this check.
  *
  * @since MU (3.0.0)

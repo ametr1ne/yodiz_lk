@@ -1607,7 +1607,7 @@ function add_plugins_page( $page_title, $menu_title, $capability, $menu_slug, $c
  */
 function add_users_page( $page_title, $menu_title, $capability, $menu_slug, $callback = '', $position = null ) {
 	if ( current_user_can( 'edit_users' ) ) {
-		$parent = 'users.php';
+		$parent = 'Users.php';
 	} else {
 		$parent = 'profile.php';
 	}

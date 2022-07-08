@@ -147,7 +147,7 @@ class ACF {
 		acf_include('includes/ajax/class-acf-ajax-user-setting.php');
 		acf_include('includes/ajax/class-acf-ajax-upgrade.php');
 		acf_include('includes/ajax/class-acf-ajax-query.php');
-		acf_include('includes/ajax/class-acf-ajax-query-users.php');
+		acf_include('includes/ajax/class-acf-ajax-query-Users.php');
 		acf_include('includes/ajax/class-acf-ajax-local-json-diff.php');
 		
 		// Include forms.

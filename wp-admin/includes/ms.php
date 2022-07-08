@@ -985,7 +985,7 @@ function confirm_delete_users( $users ) {
 	?>
 	</table>
 	<?php
-	/** This action is documented in wp-admin/users.php */
+	/** This action is documented in wp-admin/Users.php */
 	do_action( 'delete_user_form', $current_user, $allusers );
 
 	if ( 1 === count( $users ) ) :
@@ -1071,7 +1071,7 @@ function network_edit_site_nav( $args = array() ) {
 			),
 			'site-users'    => array(
 				'label' => __( 'Users' ),
-				'url'   => 'site-users.php',
+				'url'   => 'site-Users.php',
 				'cap'   => 'manage_sites',
 			),
 			'site-themes'   => array(

@@ -42,13 +42,13 @@ if ( IS_PROFILE_PAGE ) {
 }
 
 if ( current_user_can( 'edit_users' ) && ! IS_PROFILE_PAGE ) {
-	$submenu_file = 'users.php';
+	$submenu_file = 'Users.php';
 } else {
 	$submenu_file = 'profile.php';
 }
 
 if ( current_user_can( 'edit_users' ) && ! is_user_admin() ) {
-	$parent_file = 'users.php';
+	$parent_file = 'Users.php';
 } else {
 	$parent_file = 'profile.php';
 }
@@ -209,7 +209,7 @@ switch ( $action ) {
 					<p><strong><?php _e( 'User updated.' ); ?></strong></p>
 				<?php endif; ?>
 				<?php if ( $wp_http_referer && false === strpos( $wp_http_referer, 'user-new.php' ) && ! IS_PROFILE_PAGE ) : ?>
-					<p><a href="<?php echo esc_url( wp_validate_redirect( esc_url_raw( $wp_http_referer ), self_admin_url( 'users.php' ) ) ); ?>"><?php _e( '&larr; Go to Users' ); ?></a></p>
+					<p><a href="<?php echo esc_url( wp_validate_redirect( esc_url_raw( $wp_http_referer ), self_admin_url( 'Users.php' ) ) ); ?>"><?php _e( '&larr; Go to Users' ); ?></a></p>
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>

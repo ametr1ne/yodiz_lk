@@ -533,7 +533,7 @@ class WP_MS_Sites_List_Table extends WP_List_Table {
 
 		printf(
 			'<a href="%s">%s</a>',
-			esc_url( network_admin_url( 'site-users.php?id=' . $blog['blog_id'] ) ),
+			esc_url( network_admin_url( 'site-Users.php?id=' . $blog['blog_id'] ) ),
 			number_format_i18n( $user_count )
 		);
 	}

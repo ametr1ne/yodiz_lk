@@ -561,7 +561,7 @@ function wp_admin_bar_my_sites_menu( $wp_admin_bar ) {
 					'parent' => 'network-admin',
 					'id'     => 'network-admin-u',
 					'title'  => __( 'Users' ),
-					'href'   => network_admin_url( 'users.php' ),
+					'href'   => network_admin_url( 'Users.php' ),
 				)
 			);
 		}

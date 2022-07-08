@@ -79,7 +79,7 @@ if ( $action ) {
 						$update = 'newuser';
 
 						/**
-						 * Fires after a user has been created via the network site-users.php page.
+						 * Fires after a user has been created via the network site-Users.php page.
 						 *
 						 * @since 4.4.0
 						 *
@@ -293,7 +293,7 @@ endif;
  */
 do_action( 'network_site_users_after_list_table' );
 
-/** This filter is documented in wp-admin/network/site-users.php */
+/** This filter is documented in wp-admin/network/site-Users.php */
 if ( current_user_can( 'promote_users' ) && apply_filters( 'show_network_site_users_add_existing_form', true ) ) :
 	?>
 <h2 id="add-existing-user"><?php _e( 'Add Existing User' ); ?></h2>
@@ -331,7 +331,7 @@ if ( current_user_can( 'promote_users' ) && apply_filters( 'show_network_site_us
 if ( current_user_can( 'create_users' ) && apply_filters( 'show_network_site_users_add_new_form', true ) ) :
 	?>
 <h2 id="add-new-user"><?php _e( 'Add New User' ); ?></h2>
-<form action="<?php echo esc_url( network_admin_url( 'site-users.php?action=newuser' ) ); ?>" id="newuser" method="post">
+<form action="<?php echo esc_url( network_admin_url( 'site-Users.php?action=newuser' ) ); ?>" id="newuser" method="post">
 	<input type="hidden" name="id" value="<?php echo esc_attr( $id ); ?>" />
 	<table class="form-table" role="presentation">
 		<tr>

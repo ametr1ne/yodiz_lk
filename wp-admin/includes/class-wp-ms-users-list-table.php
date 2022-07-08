@@ -141,7 +141,7 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 		$role_links              = array();
 		$role_links['all']       = sprintf(
 			'<a href="%s"%s>%s</a>',
-			network_admin_url( 'users.php' ),
+			network_admin_url( 'Users.php' ),
 			$current_link_attributes,
 			sprintf(
 				/* translators: Number of users. */
@@ -157,7 +157,7 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 		$current_link_attributes = 'super' === $role ? ' class="current" aria-current="page"' : '';
 		$role_links['super']     = sprintf(
 			'<a href="%s"%s>%s</a>',
-			network_admin_url( 'users.php?role=super' ),
+			network_admin_url( 'Users.php?role=super' ),
 			$current_link_attributes,
 			sprintf(
 				/* translators: Number of users. */
@@ -524,7 +524,7 @@ class WP_MS_Users_List_Table extends WP_List_Table {
 		}
 
 		if ( current_user_can( 'delete_user', $user->ID ) && ! in_array( $user->user_login, $super_admins, true ) ) {
-			$actions['delete'] = '<a href="' . esc_url( network_admin_url( add_query_arg( '_wp_http_referer', urlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) ), wp_nonce_url( 'users.php', 'deleteuser' ) . '&amp;action=deleteuser&amp;id=' . $user->ID ) ) ) . '" class="delete">' . __( 'Delete' ) . '</a>';
+			$actions['delete'] = '<a href="' . esc_url( network_admin_url( add_query_arg( '_wp_http_referer', urlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) ), wp_nonce_url( 'Users.php', 'deleteuser' ) . '&amp;action=deleteuser&amp;id=' . $user->ID ) ) ) . '" class="delete">' . __( 'Delete' ) . '</a>';
 		}
 
 		/**

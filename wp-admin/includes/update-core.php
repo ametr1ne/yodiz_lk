@@ -216,7 +216,7 @@ $_old_files = array(
 	'wp-admin/wpmu-options.php',
 	'wp-admin/wpmu-themes.php',
 	'wp-admin/wpmu-upgrade-site.php',
-	'wp-admin/wpmu-users.php',
+	'wp-admin/wpmu-Users.php',
 	'wp-includes/images/wordpress-mu.png',
 	'wp-includes/wpmu-default-filters.php',
 	'wp-includes/wpmu-functions.php',

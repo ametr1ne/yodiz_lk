@@ -52,9 +52,9 @@ $menu[5]                  = array( __( 'Sites' ), 'manage_sites', 'sites.php', '
 $submenu['sites.php'][5]  = array( __( 'All Sites' ), 'manage_sites', 'sites.php' );
 $submenu['sites.php'][10] = array( _x( 'Add New', 'site' ), 'create_sites', 'site-new.php' );
 
-$menu[10]                 = array( __( 'Users' ), 'manage_network_users', 'users.php', '', 'menu-top menu-icon-users', 'menu-users', 'dashicons-admin-users' );
-$submenu['users.php'][5]  = array( __( 'All Users' ), 'manage_network_users', 'users.php' );
-$submenu['users.php'][10] = array( _x( 'Add New', 'user' ), 'create_users', 'user-new.php' );
+$menu[10]                 = array( __( 'Users' ), 'manage_network_users', 'Users.php', '', 'menu-top menu-icon-users', 'menu-users', 'dashicons-admin-users' );
+$submenu['Users.php'][5]  = array( __( 'All Users' ), 'manage_network_users', 'Users.php' );
+$submenu['Users.php'][10] = array( _x( 'Add New', 'user' ), 'create_users', 'user-new.php' );
 
 if ( current_user_can( 'update_themes' ) && $update_data['counts']['themes'] ) {
 	$menu[15] = array(

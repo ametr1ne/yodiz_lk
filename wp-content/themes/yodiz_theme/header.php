@@ -6,17 +6,17 @@ if ( ! isset($_COOKIE['userID']) ) {
 	header( 'Location: ' . home_url() . '/authorization' );
 }
 
-$bitrixUser = new BitrixBackend_User();
-
-$user = $bitrixUser->getUserById($_COOKIE['userID']);
-
-if ( isset( $user ) ) {
-	$userFirstName = $user->NAME;
-	$userLastName  = $user->LAST_NAME;
-	$userName = $userFirstName . ' ' . $userLastName;
-} else {
-	$userName = 'Имя не задано';
-}
+//$bitrixUser = new BitrixBackend_User();
+//
+//$user = $bitrixUser->getUserById($_COOKIE['userID']);
+//
+//if ( isset( $user ) ) {
+//	$userFirstName = $user->NAME;
+//	$userLastName  = $user->LAST_NAME;
+//	$userName = $userFirstName . ' ' . $userLastName;
+//} else {
+//	$userName = 'Имя не задано';
+//}
 
 /* // Общая информация для всех сраниц */
 

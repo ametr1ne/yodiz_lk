@@ -180,9 +180,9 @@ class WP_Users_List_Table extends WP_List_Table {
 		$count_users = ! wp_is_large_user_count();
 
 		if ( $this->is_site_users ) {
-			$url = 'site-users.php?id=' . $this->site_id;
+			$url = 'site-Users.php?id=' . $this->site_id;
 		} else {
-			$url = 'users.php';
+			$url = 'Users.php';
 		}
 
 		$role_links              = array();
@@ -414,7 +414,7 @@ class WP_Users_List_Table extends WP_List_Table {
 	}
 
 	/**
-	 * Generate HTML for a single row on the users.php admin panel.
+	 * Generate HTML for a single row on the Users.php admin panel.
 	 *
 	 * @since 3.1.0
 	 * @since 4.2.0 The `$style` parameter was deprecated.
@@ -435,9 +435,9 @@ class WP_Users_List_Table extends WP_List_Table {
 		$email               = $user_object->user_email;
 
 		if ( $this->is_site_users ) {
-			$url = "site-users.php?id={$this->site_id}&amp;";
+			$url = "site-Users.php?id={$this->site_id}&amp;";
 		} else {
-			$url = 'users.php?';
+			$url = 'Users.php?';
 		}
 
 		$user_roles = $this->get_role_list( $user_object );
@@ -475,7 +475,7 @@ class WP_Users_List_Table extends WP_List_Table {
 				&& get_current_user_id() !== $user_object->ID
 				&& current_user_can( 'delete_user', $user_object->ID )
 			) {
-				$actions['delete'] = "<a class='submitdelete' href='" . wp_nonce_url( "users.php?action=delete&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Delete' ) . '</a>';
+				$actions['delete'] = "<a class='submitdelete' href='" . wp_nonce_url( "Users.php?action=delete&amp;user=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Delete' ) . '</a>';
 			}
 
 			if ( is_multisite()
@@ -500,7 +500,7 @@ class WP_Users_List_Table extends WP_List_Table {
 			if ( get_current_user_id() !== $user_object->ID
 				&& current_user_can( 'edit_user', $user_object->ID )
 			) {
-				$actions['resetpassword'] = "<a class='resetpassword' href='" . wp_nonce_url( "users.php?action=resetpassword&amp;users=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Send password reset' ) . '</a>';
+				$actions['resetpassword'] = "<a class='resetpassword' href='" . wp_nonce_url( "Users.php?action=resetpassword&amp;users=$user_object->ID", 'bulk-users' ) . "'>" . __( 'Send password reset' ) . '</a>';
 			}
 
 			/**

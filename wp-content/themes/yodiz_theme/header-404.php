@@ -5,9 +5,9 @@ if ( ! isset($_COOKIE['userID']) ) {
 	header( 'Location: ' . home_url() . '/authorization' );
 }
 
-$bitrixUser = new BitrixBackend_User();
-
-$user = $bitrixUser->getUserById($_COOKIE['userID']);
+//$bitrixUser = new BitrixBackend_User();
+//
+//$user = $bitrixUser->getUserById($_COOKIE['userID']);
 
 if ( isset( $user ) ) {
 	$userFirstName = $user->NAME;

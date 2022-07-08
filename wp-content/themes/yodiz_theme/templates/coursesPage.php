@@ -5,16 +5,16 @@
 
 /* Общая информация для всех сраниц */
 
-if ( isset( $_COOKIE['userID'] ) ) {
-    var_dump('hello');
-	header( 'Location: ' . home_url() . '/authorization' );
-}
+//if ( isset( $_COOKIE['userID'] ) ) {
+//    var_dump('hello');
+//	header( 'Location: ' . home_url() . '/authorization' );
+//}
 
 $userID = $_COOKIE['userID'];
 
-$bitrixUser = new BitrixBackend_User();
-
-$user = $bitrixUser->getUserById( $userID );
+//$bitrixUser = new BitrixBackend_User();
+//
+//$user = $bitrixUser->getUserById( $userID );
 
 if ( isset( $user ) ) {
 	$userFirstName = $user->NAME;
@@ -98,6 +98,10 @@ if ( isset( $user ) ) {
 			<?php
 
 			//			$bitrixCourse = new BitrixBackend_Course();
+
+            $user = new Users();
+
+            var_dump($user->getUser(303));
 
 			$originID = 875;
 

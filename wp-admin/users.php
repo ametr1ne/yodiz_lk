@@ -23,7 +23,7 @@ $pagenum       = $wp_list_table->get_pagenum();
 
 // Used in the HTML title tag.
 $title       = __( 'Users' );
-$parent_file = 'users.php';
+$parent_file = 'Users.php';
 
 add_screen_option( 'per_page' );
 
@@ -92,7 +92,7 @@ if ( empty( $_REQUEST ) ) {
 	$redirect = remove_query_arg( array( 'wp_http_referer', 'updated', 'delete_count' ), wp_unslash( $_REQUEST['wp_http_referer'] ) );
 	$referer  = '<input type="hidden" name="wp_http_referer" value="' . esc_attr( $redirect ) . '" />';
 } else {
-	$redirect = 'users.php';
+	$redirect = 'Users.php';
 	$referer  = '';
 }
 
@@ -176,7 +176,7 @@ switch ( $wp_list_table->current_action() ) {
 		$userids = array_map( 'intval', (array) $_REQUEST['users'] );
 
 		if ( empty( $_REQUEST['delete_option'] ) ) {
-			$url = self_admin_url( 'users.php?action=delete&users[]=' . implode( '&users[]=', $userids ) . '&error=true' );
+			$url = self_admin_url( 'Users.php?action=delete&users[]=' . implode( '&users[]=', $userids ) . '&error=true' );
 			$url = str_replace( '&amp;', '&', wp_nonce_url( $url, 'bulk-users' ) );
 			wp_redirect( $url );
 			exit;

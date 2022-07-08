@@ -15,7 +15,7 @@ $menu[70] = array( __( 'Profile' ), 'exist', 'profile.php', '', 'menu-top menu-i
 
 $menu[99] = array( '', 'exist', 'separator-last', '', 'wp-menu-separator' );
 
-$_wp_real_parent_file['users.php'] = 'profile.php';
+$_wp_real_parent_file['Users.php'] = 'profile.php';
 $compat                            = array();
 $submenu                           = array();
 

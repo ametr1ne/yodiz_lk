@@ -198,7 +198,7 @@ Please click the following link to confirm the invite:
 			$add_user_errors = $user_id;
 		} else {
 			if ( current_user_can( 'list_users' ) ) {
-				$redirect = 'users.php?update=add&id=' . $user_id;
+				$redirect = 'Users.php?update=add&id=' . $user_id;
 			} else {
 				$redirect = add_query_arg( 'update', 'add', 'user-new.php' );
 			}
@@ -253,7 +253,7 @@ Please click the following link to confirm the invite:
 
 // Used in the HTML title tag.
 $title       = __( 'Add New User' );
-$parent_file = 'users.php';
+$parent_file = 'Users.php';
 
 $do_both = false;
 if ( is_multisite() && current_user_can( 'promote_users' ) && current_user_can( 'create_users' ) ) {
